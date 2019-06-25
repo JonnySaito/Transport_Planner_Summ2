@@ -15,8 +15,11 @@ body {
     margin-right: auto; */
 }
 
-/*** TRY USING REM FOR FONT SIZE; ALSO MAKE BREAK POINTS & MEDIA QUERIES ***/
-
+.mainContainer{
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
 
 .mainHeaderContainer{
     padding-top: 10vh;
@@ -37,7 +40,7 @@ hr{
 
 .newZealandHeader{
     font-family: 'Impact', sans-serif;
-    font-size: 6.5vh;
+    font-size: 7vh;
     color: #232C43;
     padding-top: 1vh;
 }
@@ -50,17 +53,16 @@ hr{
 }
 
 .appName{
-    padding-top: 4vh;
-    margin: 20px 5vw;
+    padding-top: 2vh;
+    margin: 50px 10px 0px 10px;
     text-align: center;
 }
 
 .transportPlanner{
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 4vh;
+    font-size: 5vh;
     color: #FFFFFF;
-    padding-top: 1vh;
 }
 
 .iconRow{
@@ -78,7 +80,7 @@ hr{
 
 .letsGoBox{
     height: auto;
-    width: 25vw;
+    width: 30vw;
     background-color: #232C43;
     border-radius: 20px;
     box-shadow: 5px 5px 8px #444444;
@@ -90,7 +92,7 @@ hr{
 
 .letsGoHeader{
     font-family: 'Pacifico', cursive;
-    font-size: 2vh;
+    font-size: 3vh;
     color: #FFFFFF;
     padding: 5px;
 
@@ -110,7 +112,7 @@ hr{
 
 @media only screen and (min-width: 650px) {
   .newZealandHeader{
-      font-size: 10vh;
+      font-size: 9vh;
   }
   .roadTripHeader{
       font-size: 8vh;
@@ -120,6 +122,28 @@ hr{
 }
   .vehicleIcon{
       width: 15vw;
+      padding: 1.5vw;
+  }
+  .pureNZlogo{
+    width: 20vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+ .mainContainer{
+    max-width: 1800px;
+    }
+  .newZealandHeader{
+      font-size: 12vh;
+  }
+  .roadTripHeader{
+      font-size: 10vh;
+  }
+  .transportPlanner{
+      font-size: 8vh;
+}
+  .vehicleIcon{
+      width: 12vw;
       padding: 1.5vw;
   }
   .pureNZlogo{
