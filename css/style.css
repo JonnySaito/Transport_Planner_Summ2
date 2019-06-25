@@ -3,17 +3,20 @@
   padding: 0;
   margin: 0;}
 
-body, html{
+body {
     background-image: url("../images/mainImage.png");
     background-color: #F5F9FD;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    background-size: contain;
+    /* height: 100%;
+    width: 100%; */
+    width: 100vw;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
+
+/*** TRY USING REM FOR FONT SIZE; ALSO MAKE BREAK POINTS & MEDIA QUERIES ***/
 
 /*
 @media only screen and (min-width: 800px) {
@@ -31,21 +34,67 @@ body, html{
 hr{
     border: none;
     background-color: #232C43;
-    height: 1px;
+    height: 2px;
+}
+
+.headerStyle{
+    width: 100%;
+    height: auto;
 }
 
 .newZealandHeader{
-    width: 100%;
-    font-family: impact;
+    font-family: 'Impact', sans-serif;
     font-size: 13.3vw;
     color: #232C43;
-    padding-top: 10px;
+    padding-top: 1vh;
 }
 
 .roadTripHeader{
-    width: 100%;
     font-family: 'Pacifico', cursive;
     font-size: 12vw;
     color: #232C43;
     padding: 0px 20px 10px 20px;
+}
+
+.appName{
+    padding-top: 4vh;
+    margin: 0vw 5vw;
+    text-align: center;
+}
+
+.transportPlanner{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 8vw;
+    color: #FFFFFF;
+    padding-top: 1vh;
+}
+
+.iconRow{
+    height: auto;
+    padding-top: 2vh;
+    margin: 0;
+    text-align: center;
+}
+
+.vehicleIcon{
+    width: 20vw;
+    padding: 2vw;
+}
+
+.letsGoBox{
+    height: 10vh;
+    width: 30vw;
+    background-color: #232C43;
+    border-radius: 30px;
+    box-shadow: 5px 10px 18px #444444;
+    margin: 2vh 35vw;
+    text-align: center;
+}
+
+.letsGoHeader{
+    font-family: 'Pacifico', cursive;
+    font-size: 6vw;
+    color: #FFFFFF;
+    padding: 5px;
 }
