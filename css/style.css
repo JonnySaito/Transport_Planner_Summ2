@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;}
+  margin: 0;
+}
 
 body {
     background-image: url("../images/mainImage.png");
@@ -11,8 +12,6 @@ body {
     background-size: cover;
     width: auto;
     height: 100vh;
-    /* margin-left: auto;
-    margin-right: auto; */
 }
 
 .mainContainer{
@@ -69,7 +68,6 @@ hr{
     height: auto;
     padding-top: 2vh;
     margin: 0;
-    /* margin-top: 10px; */
     text-align: center;
 }
 
@@ -90,12 +88,15 @@ hr{
     padding-bottom: 5px;
 }
 
+.letsGoBox:hover{
+    background-color: #52679b;
+}
+
 .letsGoHeader{
     font-family: 'Pacifico', cursive;
     font-size: 3vh;
     color: #FFFFFF;
     padding: 5px;
-
 }
 
 .logoBox{
@@ -110,7 +111,45 @@ hr{
   right: 0;
 }
 
-@media only screen and (min-width: 650px) {
+.helpIconBox{
+    height: auto;
+    width: 2.5rem;
+    background-color: #232C43;
+    opacity: 0.7;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px #444444;
+    margin: 15px;
+    text-align: center;
+    padding: 2px 8px;
+    position:fixed;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.helpIcon{
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.kiaOraBox{
+    margin: 20vh 20vw 0 20vw;
+    /* width: 60vw; */
+    height: auto;
+    background-color: #232C43;
+    opacity: 0.7;
+    padding: 10px;
+    display: none;
+}
+
+.goBackIcon{
+    width: 1.5rem;
+
+}
+
+@media only screen and (min-width: 650px){
   .newZealandHeader{
       font-size: 9vh;
   }
@@ -119,7 +158,7 @@ hr{
   }
   .transportPlanner{
       font-size: 6vh;
-}
+  }
   .vehicleIcon{
       width: 15vw;
       padding: 1.5vw;
@@ -129,10 +168,10 @@ hr{
   }
 }
 
-@media only screen and (min-width: 1200px) {
- .mainContainer{
-    max-width: 1800px;
-    }
+@media only screen and (min-width: 1200px){
+  .mainContainer{
+  max-width: 1800px;
+}
   .newZealandHeader{
       font-size: 12vh;
   }
@@ -141,7 +180,7 @@ hr{
   }
   .transportPlanner{
       font-size: 8vh;
-}
+  }
   .vehicleIcon{
       width: 12vw;
       padding: 1.5vw;
