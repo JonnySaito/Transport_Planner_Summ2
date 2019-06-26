@@ -39,5 +39,15 @@ $(document).ready(function(){
         $(".mainContainer").hide();
         $(".helpIconBox").show();
         $(".kiaOraBox").show();
+        $(".goBackIcon").click(function(){
+            $(".helpIconBox").hide();
+            $(".kiaOraBox").hide();
+            $(".mainContainer").show();
+        });
+        $(".helpIcon").click(function(){
+            $(".mainContainer").hide();
+            $(".kiaOraBox").hide();
+            $(".helpContainer").show();
+        });
     });
 });

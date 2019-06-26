@@ -77,14 +77,14 @@ hr{
 }
 
 .letsGoBox{
-    width: 8rem;
+    width: 30vw;
     background-color: #232C43;
     border-radius: 20px;
     box-shadow: 5px 5px 8px #444444;
     margin: auto;
     text-align: center;
     margin-top: 50px;
-    padding-bottom: 0.5px;
+    /* padding-bottom: 0.5px; */
 }
 
 .letsGoBox:hover{
@@ -98,7 +98,7 @@ hr{
     padding: 5px;
 }
 
-.logoBox{
+.nzLogoBox{
   overflow: auto;
   text-align: right;
 }
@@ -114,7 +114,7 @@ hr{
     height: 3.2rem;
     width: 2.5rem;
     background-color: #232C43;
-    opacity: 0.7;
+    opacity: 0.8;
     border-radius: 10px;
     box-shadow: 3px 3px 6px #444444;
     margin: 15px;
@@ -126,12 +126,12 @@ hr{
     display: none;
 }
 
-.helpIcon{
+/* .helpIcon{
     font-family: 'Pacifico', cursive;
     font-size: 2rem;
     font-weight: bold;
     color: #FFFFFF;
-}
+}  */
 
 .kiaOraBox{
     margin: 15vh 20vw 0 20vw;
@@ -162,6 +162,47 @@ h2{
     color: #FFFFFF;
 }
 
+.helpContainer{
+    margin: 15vh 20vw 0 20vw;
+    max-width: 900px;
+    height: auto;
+    background-color: #232C43;
+    opacity: 0.8;
+    padding: 10px;
+    position: relative;
+    display: none;
+}
+
+.helpWords{
+    text-align: center;
+}
+
+.closeIcon{
+    width: 4vw;
+    position: absolute;
+    right: 10px;
+}
+
+h3{
+    font-family: 'Nunito', sans-serif;
+    font-size: 4.5vw;
+    color: #FFFFFF;
+}
+ .midHeader{
+    padding-top: 30px;
+ }
+
+.helpText{
+
+}
+
+.helpList{
+    padding-left: 40px;
+    padding-right: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.5vw;
+    color: #FFFFFF;
+}
 
 @media only screen and (min-width: 650px){
   .newZealandHeader{
@@ -186,6 +227,10 @@ h2{
   .kiaOraText{
     font-size: 2vw;
   }
+  .helpText{
+      padding-left: 10vw;
+      padding-right: 10vw;
+  }
 }
 
 @media only screen and (min-width: 900px){
@@ -195,11 +240,45 @@ h2{
     .peopleDrop{
         font-size: 1.2rem;
     }
+    .midHeader{
+       padding-top: 40px;
+    }
+    .helpText{
+        padding-left: 50px;
+    }
 }
 
 @media only screen and (min-width: 1200px){
   .mainContainer{
   max-width: 1800px;
+}
+  .newZealandHeader{
+      font-size: 12vh;
+  }
+  .roadTripHeader{
+      font-size: 10vh;
+  }
+  .transportPlanner{
+      font-size: 8vh;
+  }
+  .vehicleIcon{
+      width: 12vw;
+      padding: 1.5vw;
+  }
+  .pureNZlogo{
+    width: 20vw;
+  }
+  .midHeader{
+     padding-top: 60px;
+  }
+  .helpText{
+      padding-left: 70px;
+  }
+}
+
+@media only screen and (min-width: 1800px){
+  .mainContainer{
+  max-width: 2800px;
 }
   .newZealandHeader{
       font-size: 12vh;
