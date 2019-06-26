@@ -77,15 +77,14 @@ hr{
 }
 
 .letsGoBox{
-    height: auto;
-    width: 30vw;
+    width: 8rem;
     background-color: #232C43;
     border-radius: 20px;
     box-shadow: 5px 5px 8px #444444;
     margin: auto;
     text-align: center;
     margin-top: 50px;
-    padding-bottom: 5px;
+    padding-bottom: 0.5px;
 }
 
 .letsGoBox:hover{
@@ -112,7 +111,7 @@ hr{
 }
 
 .helpIconBox{
-    height: auto;
+    height: 3.2rem;
     width: 2.5rem;
     background-color: #232C43;
     opacity: 0.7;
@@ -135,19 +134,34 @@ hr{
 }
 
 .kiaOraBox{
-    margin: 20vh 20vw 0 20vw;
-    /* width: 60vw; */
+    margin: 15vh 20vw 0 20vw;
     height: auto;
     background-color: #232C43;
-    opacity: 0.7;
+    opacity: 0.8;
     padding: 10px;
     display: none;
 }
 
 .goBackIcon{
-    width: 1.5rem;
-
+    width: 4vw;
 }
+
+.kiaOraWords{
+    text-align: center;
+}
+
+h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 8vw;
+    color: #FFFFFF;
+}
+
+.kiaOraText{
+    font-family: 'Nunito', sans-serif;
+    font-size: 4vw;
+    color: #FFFFFF;
+}
+
 
 @media only screen and (min-width: 650px){
   .newZealandHeader{
@@ -166,6 +180,21 @@ hr{
   .pureNZlogo{
     width: 20vw;
   }
+  h2{
+    font-size: 6vw;
+  }
+  .kiaOraText{
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (min-width: 900px){
+    .peopleButton{
+        font-size: 1.2rem;
+    }
+    .peopleDrop{
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (min-width: 1200px){
