@@ -11,95 +11,72 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="helpIconBox">
-            <img src="images/questionIcon.png" alt="question mark">
-        </div>
-        <div class="kiaOraBox">
-            <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                <div class="kiaOraWords">
-                    <h2>Kia ora!</h2>
-                    <p class="kiaOraText">There’s so much to see
-                        <br>and do in New Zealand.
-                        <br>And self-driving is a great
-                        <br>way to get around.
-                        <br><br>
-                        So let’s get started.
-                        <br>First, how many people
-                        <br>are in your group?</p>
-
-                    <div class="dropdown">
-                      <button class="btn btn-light dropdown-toggle peopleButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Choose a number
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item peopleDrop" href="#">1-2 people</a>
-                        <a class="dropdown-item peopleDrop" href="#">3-4 people</a>
-                        <a class="dropdown-item peopleDrop" href="#">5-6 people</a>
-                      </div>
+        <div class="pageContainer">
+            <div class="contentBox">
+                <div class="mainContainer" id="page1">
+                    <div class="mainHeaderContainer">
+                        <hr></hr>
+                        <p class="newZealandHeader">NEW ZEALAND</p>
+                        <p class="roadTripHeader">Road Trip</p>
+                        <hr></hr>
+                    </div>
+                    <div class="appName">
+                        <p class="transportPlanner">TRANSPORT PLANNER</p>
+                    </div>
+                    <div class="iconRow headerStyle">
+                        <img class="vehicleIcon" src="images/camperVan.png" alt="icon of campervan">
+                        <img class="vehicleIcon" src="images/smallCar.png" alt="icon of small car">
+                        <img class="vehicleIcon" src="images/motorbike.png" alt="icon of motorbike">
+                        <img class="vehicleIcon" src="images/suv.png" alt="icon of s.u.v.">
+                    </div>
+                    <div class="letsGoBox">
+                        <p class="letsGoHeader">Let's go!</p>
                     </div>
                 </div>
-        </div>
-        <div class="helpContainer">
-            <div class="closeContainer">
-                <img class="closeIcon" src="images/closeIcon.png" alt="close window icon">
-            </div>
-            <div class="helpWords">
-                <h3 class="midHeader">Planning with us is easy.</h3>
-                <h3>Here's how it works.</h3>
-            </div>
-            <p class="helpText">
-                <ol class="helpList">
-                    <li >Tell us how many people
-                         you’re travelling with.</li>
-                    <li>Tell us how many days
-                         your trip is.</li>
-                    <li>Choose a vehicle.</li>
-                    <li>Select your start and end
-                         points.</li>
-                    <li>See the total cost. </li>
-                    <li>Start packing your bags!</li>
-                </ol>
-            </p>
+                <div class="helpIconBox">
+                    <img src="images/questionIcon.png" alt="question mark">
+                </div>
+                <div class="kiaOraBox" id="page2">
+                    <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                        <div class="kiaOraWords">
+                            <h2>Kia ora!</h2>
+                            <p class="bodyText">There’s so much to see
+                                <br>and do in New Zealand.
+                                <br>And self-driving is a great
+                                <br>way to get around.
+                                <br><br>
+                                So let’s get started.
+                                <br>First, how many people
+                                <br>are in your group?</p>
+
+                            <div class="dropdown">
+                              <button class="btn btn-light dropdown-toggle peopleButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Choose a number
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item peopleDrop" href="#">1-2 people</a>
+                                <a class="dropdown-item peopleDrop" href="#">3-4 people</a>
+                                <a class="dropdown-item peopleDrop" href="#">5-6 people</a>
+                              </div>
+                            </div>
+                        </div>
+                </div>
 
 
-        </div>
-        <div class="mainContainer">
-            <div class="mainHeaderContainer">
-                <hr></hr>
-                <p class="newZealandHeader headerStyle">NEW ZEALAND</p>
-                <p class="roadTripHeader headerStyle">Road Trip</p>
-                <hr></hr>
-            </div>
-            <div class="appName">
-                <p class="transportPlanner headerStyle">TRANSPORT PLANNER</p>
-            </div>
-            <div class="iconRow headerStyle">
-                <img class="vehicleIcon" src="images/camperVan.png" alt="icon of campervan">
-                <img class="vehicleIcon" src="images/smallCar.png" alt="icon of small car">
-                <img class="vehicleIcon" src="images/motorbike.png" alt="icon of motorbike">
-                <img class="vehicleIcon" src="images/suv.png" alt="icon of s.u.v.">
-            </div>
-            <div class="letsGoBox">
-                <p class="letsGoHeader">Let's go!</p>
-            </div>
-        </div>
 
-        <div class="nzLogoBox">
-            <a href="https://www.newzealand.com/int/" target="_blank">
-                <img class="pureNZlogo" src="images/pureNZlogo.png" alt="logo for 100% Pure NZ campaign">
-            </a>
+            </div>
+
+
+
 
         </div>
-
-
-
-
-
-
-
-
-
-
+        <div class="footer">
+            <div class="nzLogoBox">
+                <a href="https://www.newzealand.com/int/" target="_blank">
+                    <img class="pureNZlogo" src="images/pureNZlogo.png" alt="logo for 100% Pure NZ campaign">
+                </a>
+            </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

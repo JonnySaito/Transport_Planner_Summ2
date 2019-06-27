@@ -35,19 +35,26 @@ var motorhome = {
 };
 
 $(document).ready(function(){
+    // var currentDiv = $(".mainContainer");
+
     $(".letsGoBox").click(function(){
         $(".mainContainer").hide();
         $(".helpIconBox").show();
         $(".kiaOraBox").show();
+        // currentDiv = $(".kiaOraBox");
         $(".goBackIcon").click(function(){
             $(".helpIconBox").hide();
             $(".kiaOraBox").hide();
             $(".mainContainer").show();
         });
-        $(".helpIcon").click(function(){
+        $(".helpIconBox").click(function(){
             $(".mainContainer").hide();
             $(".kiaOraBox").hide();
             $(".helpContainer").show();
+            $(".closeButton").click(function(){
+                $(".helpContainer").hide();
+                $(".kiaOraBox").show();
+            })
         });
     });
 });

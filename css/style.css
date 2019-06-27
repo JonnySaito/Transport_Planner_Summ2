@@ -12,17 +12,36 @@ body {
     background-size: cover;
     width: auto;
     height: 100vh;
+    overflow: hidden;
+
+}
+
+.pageContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentBox{
+    overflow-y: auto;
+    width: 80vw;
+    height: 80vh;
+    /* max-width: 600px; */
+    /* margin: 10px; */
+    min-height: 100px;
+    max-height: 80vh;
+    /* background-color: #232C43; */
+    /* opacity: 0.8; */
+    /* padding: 10px; */
+    /* overflow: hidden; */
+    /* position: relative; */
 }
 
 .mainContainer{
     margin: 0 auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.mainHeaderContainer{
-    padding-top: 10vh;
-    margin: 0vh 15vw;
+    max-width: 1000px;
     text-align: center;
 }
 
@@ -30,54 +49,61 @@ hr{
     border: none;
     background-color: #232C43;
     height: 2px;
+    margin: 0;
 }
 
-.headerStyle{
+.mainHeaderContainer{
+    /* padding-top: 10vh;
+    margin: 0vh 15vw;
+    text-align: center; */
+}
+
+/* .headerStyle{
     width: 100%;
     height: auto;
-}
+} */
 
 .newZealandHeader{
     font-family: 'Impact', sans-serif;
-    font-size: 7vh;
+    font-size: 3em;
     color: #232C43;
-    padding-top: 1vh;
+    padding-top: 0.5vh;
 }
 
 .roadTripHeader{
     font-family: 'Pacifico', cursive;
-    font-size: 6vh;
+    font-size: 3em;
     color: #232C43;
-    padding: 0px 20px 10px 20px;
+    padding: 0px 20px;
 }
 
 .appName{
-    padding-top: 2vh;
-    margin: 50px 10px 0px 10px;
+    /* padding-top: 2vh; */
+    margin: 40px 5px;
     text-align: center;
 }
 
 .transportPlanner{
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 5vh;
+    font-size: 1.5em;
     color: #FFFFFF;
 }
 
 .iconRow{
     height: auto;
-    padding-top: 2vh;
-    margin: 0;
-    text-align: center;
+    /* padding-top: 0.5vh; */
+    /* margin: 0; */
+    /* text-align: center; */
 }
 
 .vehicleIcon{
-    width: 20vw;
+    width: 3.5rem;
     padding: 2vw;
 }
 
 .letsGoBox{
-    width: 30vw;
+    width: 8rem;
     background-color: #232C43;
     border-radius: 20px;
     box-shadow: 5px 5px 8px #444444;
@@ -93,25 +119,32 @@ hr{
 
 .letsGoHeader{
     font-family: 'Pacifico', cursive;
-    font-size: 3vh;
+    font-size: 1.5rem;
     color: #FFFFFF;
     padding: 5px;
 }
 
+.footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
 .nzLogoBox{
-  overflow: auto;
-  text-align: right;
+  /* overflow: auto; */
+  /* text-align: right; */
 }
 
 .pureNZlogo{
-  width: 35vw;
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  /* width: 35vw; */
+  height: 10vh;
+
 }
 
+/* STYLE FOR PAGE 2 */
+
 .helpIconBox{
-    height: 3.2rem;
+    height: 2.9rem;
     width: 2.5rem;
     background-color: #232C43;
     opacity: 0.8;
@@ -119,31 +152,29 @@ hr{
     box-shadow: 3px 3px 6px #444444;
     margin: 15px;
     text-align: center;
-    padding: 2px 8px;
+    padding: 8px;
     position:fixed;
     top: 0;
     right: 0;
     display: none;
 }
 
-/* .helpIcon{
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #FFFFFF;
-}  */
+.helpIconBox img {
+    width: 100%;
+}
 
 .kiaOraBox{
-    margin: 15vh 20vw 0 20vw;
+    /* margin: 15vh 20vw 0 20vw;
     height: auto;
+    padding: 10px; */
     background-color: #232C43;
     opacity: 0.8;
-    padding: 10px;
     display: none;
 }
 
 .goBackIcon{
-    width: 4vw;
+    padding: 15px 0 0 15px;
+    width: 2.5rem;
 }
 
 .kiaOraWords{
@@ -156,21 +187,15 @@ h2{
     color: #FFFFFF;
 }
 
-.kiaOraText{
+.bodyText{
     font-family: 'Nunito', sans-serif;
     font-size: 4vw;
     color: #FFFFFF;
 }
 
-.helpContainer{
-    margin: 15vh 20vw 0 20vw;
-    max-width: 900px;
-    height: auto;
-    background-color: #232C43;
-    opacity: 0.8;
-    padding: 10px;
+/* STYLING FOR PAGE 3 -- HELP PAGE */
+/* .helpContainer{
     position: relative;
-    display: none;
 }
 
 .helpWords{
@@ -179,33 +204,45 @@ h2{
 
 .closeIcon{
     width: 4vw;
+    width: 1.5rem;
     position: absolute;
     right: 10px;
 }
 
 h3{
     font-family: 'Nunito', sans-serif;
-    font-size: 4.5vw;
-    color: #FFFFFF;
 }
  .midHeader{
     padding-top: 30px;
+    font-size: 1.2rem;
+    color: #FFFFFF;
  }
 
-.helpText{
-
-}
+ .helpText{
+     padding-left: 7.5vw;
+     padding-right: 5vw;
+ }
 
 .helpList{
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 20px;
     font-family: 'Nunito', sans-serif;
-    font-size: 2.5vw;
+    font-size: 0.8rem;
     color: #FFFFFF;
-}
+}  */
 
-@media only screen and (min-width: 650px){
-  .newZealandHeader{
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 450px){
+    body{
+    font-size: 20px;
+    }
+    .vehicleIcon{
+        width: 5rem;
+        padding: 1.5vw;
+    }
+  /* .newZealandHeader{
       font-size: 9vh;
   }
   .roadTripHeader{
@@ -227,14 +264,33 @@ h3{
   .kiaOraText{
     font-size: 2vw;
   }
-  .helpText{
-      padding-left: 10vw;
-      padding-right: 10vw;
-  }
+  .helpContainer{
+      width: 60vw;
+  } */
 }
 
-@media only screen and (min-width: 900px){
-    .peopleButton{
+
+@media only screen and (min-width: 650px){
+    body{
+    font-size: 30px;
+    }
+    .vehicleIcon{
+        width: 6rem;
+    }
+    .contentBox{
+        max-width: 580px;
+    }
+    .letsGoBox{
+        width: 10rem;
+    }
+    .goBackIcon{
+        padding: 20px 0 0 20px;
+        width: 3.5rem;
+    }
+    .helpIconBox{
+        padding-top: 0;
+    }
+    /* .peopleButton{
         font-size: 1.2rem;
     }
     .peopleDrop{
@@ -243,15 +299,42 @@ h3{
     .midHeader{
        padding-top: 40px;
     }
-    .helpText{
-        padding-left: 50px;
+    .helpContainer{
+        max-width: 800px;
     }
+    .midHeader{
+        font-size: 2.5vw;
+    }
+    .helpList{
+        font-size: 1.5rem;
+    } */
 }
 
-@media only screen and (min-width: 1200px){
-  .mainContainer{
-  max-width: 1800px;
+@media only screen and (min-width: 1500px){
+    body{
+    font-size: 40px;
+    }
+    hr{
+    margin-top: 30px;
+    }
+    .vehicleIcon{
+        width: 9rem;
+    }
+    .contentBox{
+        max-width: 860px;
+    }
+    .letsGoBox{
+        width: 12rem;
+        margin-top: 0;
+    }
+    .letsGoHeader{
+        font-size: 2.5rem;
+    }
 }
+/* @media only screen and (min-width: 1200px){ */
+  /* .mainContainer{
+  max-width: 1800px;
+  }
   .newZealandHeader{
       font-size: 12vh;
   }
@@ -271,15 +354,15 @@ h3{
   .midHeader{
      padding-top: 60px;
   }
-  .helpText{
+ .helpText{
       padding-left: 70px;
   }
-}
+} */
 
-@media only screen and (min-width: 1800px){
-  .mainContainer{
+/* @media only screen and (min-width: 1800px){ */
+  /* .mainContainer{
   max-width: 2800px;
-}
+  }
   .newZealandHeader{
       font-size: 12vh;
   }
@@ -296,4 +379,4 @@ h3{
   .pureNZlogo{
     width: 20vw;
   }
-}
+} */
