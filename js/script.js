@@ -35,13 +35,13 @@ var motorhome = {
 };
 
 $(document).ready(function(){
-    // var currentDiv = $(".mainContainer");
+    // var currentPage = $("#page1");
 
     $(".letsGoBox").click(function(){
         $(".mainContainer").hide();
         $(".helpIconBox").show();
         $(".kiaOraBox").show();
-        // currentDiv = $(".kiaOraBox");
+        // currentPage = $("#page"+1); ???
         $(".goBackIcon").click(function(){
             $(".helpIconBox").hide();
             $(".kiaOraBox").hide();

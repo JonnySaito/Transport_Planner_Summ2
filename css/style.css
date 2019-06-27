@@ -144,15 +144,15 @@ hr{
 /* STYLE FOR PAGE 2 */
 
 .helpIconBox{
-    height: 2.9rem;
-    width: 2.5rem;
+    height: 1.8rem;
+    width: 1.8rem;
     background-color: #232C43;
     opacity: 0.8;
     border-radius: 10px;
     box-shadow: 3px 3px 6px #444444;
     margin: 15px;
     text-align: center;
-    padding: 8px;
+    padding: 2px;
     position:fixed;
     top: 0;
     right: 0;
@@ -160,7 +160,7 @@ hr{
 }
 
 .helpIconBox img {
-    width: 100%;
+    width: 80%;
 }
 
 .kiaOraBox{
@@ -181,55 +181,64 @@ hr{
     text-align: center;
 }
 
-h2{
+h2, h3{
     font-family: 'Nunito', sans-serif;
-    font-size: 8vw;
     color: #FFFFFF;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 1.5rem;
 }
 
 .bodyText{
     font-family: 'Nunito', sans-serif;
-    font-size: 4vw;
+    font-size: 1rem;
     color: #FFFFFF;
 }
 
 /* STYLING FOR PAGE 3 -- HELP PAGE */
-/* .helpContainer{
+.helpContainer{
     position: relative;
+    background-color: #232C43;
+    opacity: 0.8;
+    display: none;
 }
 
 .helpWords{
     text-align: center;
+    padding: 10px;
+}
+
+.closeContainer{
+    padding: 15px;
 }
 
 .closeIcon{
-    width: 4vw;
-    width: 1.5rem;
+    width: 1.2rem;
     position: absolute;
     right: 10px;
 }
 
-h3{
-    font-family: 'Nunito', sans-serif;
-}
- .midHeader{
+ /* .midHeader{
     padding-top: 30px;
     font-size: 1.2rem;
     color: #FFFFFF;
- }
+ } */
 
  .helpText{
-     padding-left: 7.5vw;
-     padding-right: 5vw;
+     /* padding: 0 20px 20px 40px; */
  }
 
 .helpList{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px 20px 60px;
     font-family: 'Nunito', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #FFFFFF;
-}  */
+}
 
 
 /* MEDIA QUERIES */
@@ -241,6 +250,23 @@ h3{
     .vehicleIcon{
         width: 5rem;
         padding: 1.5vw;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    .bodyText{
+        font-size: 1.2rem;
+    }
+    .helpIconBox{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+    .helpList{
+        padding: 0 30px 20px 80px;
+        font-size: 1.2rem;
     }
   /* .newZealandHeader{
       font-size: 9vh;
@@ -289,6 +315,21 @@ h3{
     }
     .helpIconBox{
         padding-top: 0;
+        height: 3.2rem;
+        width: 3.2rem;
+    }
+    h2{
+        font-size: 3.5rem;
+    }
+    .bodyText{
+        font-size: 1.4rem;
+    }
+    h3{
+        font-size: 2.5rem;
+    }
+    .helpList{
+        padding-left: 100px;
+        font-size: 1.5rem;
     }
     /* .peopleButton{
         font-size: 1.2rem;
@@ -322,13 +363,32 @@ h3{
     }
     .contentBox{
         max-width: 860px;
+        display: flex;
+        justify-content: center;
     }
+    .kiaOraBox{
+        max-width: 860px;
+    }
+
     .letsGoBox{
         width: 12rem;
         margin-top: 0;
     }
     .letsGoHeader{
         font-size: 2.5rem;
+    }
+    h2{
+        font-size: 5rem;
+    }
+    .bodyText{
+        font-size: 2.2rem;
+    }
+    .helpIconBox{
+        height: 4rem;
+        width: 4rem;
+    }
+    .helpContainer{
+        max-width: 580px;
     }
 }
 /* @media only screen and (min-width: 1200px){ */
