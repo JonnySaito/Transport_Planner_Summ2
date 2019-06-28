@@ -86,7 +86,12 @@ $(".closeButton").click(function(){
 //ENTER NUMBER OF PEOPLE THEN PROCEED TO PAGE 3 (NUMBER OF DAYS)
 $("#peopleOK").click(function(){
     numberPeople = parseInt($("#people").val());
-    if(numberPeople < 1 || numberPeople > 6 || numberPeople === null) {
+    console.log(numberPeople);
+    if(!numberPeople){
+        console.log("ERRROR");
+        $('#usernameValidation').text("ERROR");
+    }
+    if(numberPeople < 1 || numberPeople > 6 || !numberPeople) {
         alert("Please enter a number from 1 to 6");
     } else{
         getHeight();
