@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Transport Planner</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="icon" type="image/png" href="images/transportFavicon.ico">
@@ -49,19 +50,41 @@
                                 <br>First, how many people
                                 <br>are in your group?</p>
 
-                            <div class="dropdown">
-                              <button class="btn btn-light dropdown-toggle peopleButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                How many people?
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item peopleDrop" href="#">1-2 people</a>
-                                <a class="dropdown-item peopleDrop" href="#">3-4 people</a>
-                                <a class="dropdown-item peopleDrop" href="#">5-6 people</a>
-                              </div>
-                            </div>
+                                <div class="inputField">
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/people.svg" class="peopleIcon"></img></span>
+                                      </div>
+                                      <input id="people" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                      <button id="peopleOK" type="button" class="btn btn-success">OK</button>
+                                    </div>
+                                </div>
+
                         </div>
                 </div>
-                <div class="helpContainer" id="page3">
+                <div class="daysBox" id="page3">
+                    <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                        <div class="daysWords">
+                            <h2>Great!</h2>
+                            <p class="bodyText">Now, how many days
+                                <br>will you be travelling?
+                                <br><br>
+                                <div class="inputField">
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/calendarIcon.png" class="calendarIcon"></img></span>
+                                      </div>
+                                      <input id="journeyDays" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                      <button id="daysOK" type="button" class="btn btn-success">OK</button>
+                                    </div>
+                                </div>
+
+                        </div>
+                </div>
+
+
+
+                <div class="helpContainer" id="helpContainer">
                     <div class="closeContainer">
                         <img class="closeIcon closeButton" src="images/closeIcon.png" alt="close window icon">
                     </div>
@@ -85,8 +108,6 @@
 
 
             </div>
-
-
 
 
         </div>

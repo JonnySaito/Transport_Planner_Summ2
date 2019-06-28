@@ -136,9 +136,7 @@ hr{
 }
 
 .pureNZlogo{
-  /* width: 35vw; */
   height: 10vh;
-
 }
 
 /* STYLE FOR PAGE 2 */
@@ -163,10 +161,7 @@ hr{
     width: 80%;
 }
 
-.kiaOraBox{
-    /* margin: 15vh 20vw 0 20vw;
-    height: auto;
-    padding: 10px; */
+.kiaOraBox, .daysBox{
     background-color: #232C43;
     opacity: 0.8;
     display: none;
@@ -177,7 +172,7 @@ hr{
     width: 2.5rem;
 }
 
-.kiaOraWords{
+.kiaOraWords, .daysWords{
     text-align: center;
 }
 
@@ -200,7 +195,17 @@ h3{
     color: #FFFFFF;
 }
 
-/* STYLING FOR PAGE 3 -- HELP PAGE */
+.inputField{
+    padding: 0 40px 10px 40px;
+    margin: auto;
+    max-width: 300px;
+}
+
+.peopleIcon, .calendarIcon{
+    width: 1.8em;
+}
+
+/* STYLING FOR HELP PAGE */
 .helpContainer{
     position: relative;
     background-color: #232C43;
