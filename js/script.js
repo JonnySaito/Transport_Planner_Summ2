@@ -57,60 +57,81 @@ $(document).ready(function(){
         $("#page2").fadeIn(1000);
         getHeightForNextPage();
     });
-// CLICK BACK ARROW TO RETURN TO PAGE 1
-    $(".goBackIcon").click(function(){
-        getHeight();
-        $("#page2").hide();
-        $(".helpIconBox").hide();
-        $("#page1").fadeIn(1000);
-        getHeightForNextPage();
-    });
-// CLICK ? ICON TO GO TO PAGE 3 (HELP PAGE)
-    $(".helpIconBox").click(function(){
-        getHeight();
-        currentPageElement.hide();
-        $(".helpIconBox").show();
-        $("#helpContainer").fadeIn(1000);
-        getHeightForNextPage();
-    });
-// CLICK X ICON TO RETURN TO PAGE 2 (KIA ORA PAGE)
-    $(".closeButton").click(function(){
-        $("#helpContainer").hide();
-        currentPageElement.fadeIn(1000);
-    });
-//ENTER NUMBER OF PEOPLE THEN PROCEED TO PAGE 4 (NUMBER OF DAYS)
+});
 
-        $("#peopleOK").click(function(){
-            // console.log("clicked people OK button");
-            numberPeople = parseInt($("#people").val());
-            console.log(numberPeople);
-        });
-        // numberPeople = parseInt($("#people").val());
-        // console.log(numberPeople);
-        // if(numberPeople < 1 || numberPeople > 6) {
-        //     // tell user to input a number 1-6
-        //     $()
-        // }
+// CLICK BACK ARROW TO RETURN TO PAGE 1
+$(".goBackIcon").click(function(){
+    getHeight();
+    currentPageElement.hide();
+    $(".helpIconBox").hide();
+    $("#page1").fadeIn(1000);
+    getHeightForNextPage();
+});
+
+// CLICK ? ICON TO GO TO HELP PAGE
+$(".helpIconBox").click(function(){
+    getHeight();
+    currentPageElement.hide();
+    $(".helpIconBox").show();
+    $("#helpContainer").fadeIn(1000);
+    getHeightForNextPage();
+});
+
+// CLICK X ICON TO RETURN TO PAGE 2 (KIA ORA PAGE)
+$(".closeButton").click(function(){
+    $("#helpContainer").hide();
+    currentPageElement.fadeIn(1000);
+});
+
+//ENTER NUMBER OF PEOPLE THEN PROCEED TO PAGE 3 (NUMBER OF DAYS)
+$("#peopleOK").click(function(){
+    numberPeople = parseInt($("#people").val());
+    if(numberPeople < 1 || numberPeople > 6 || numberPeople === null) {
+        alert("Please enter a number from 1 to 6");
+    } else{
+        getHeight();
+        currentPageElement = $("#page3");
+        $("#page2").hide();
+        $(".helpIconBox").show();
+        $("#page3").fadeIn(1000);
+        getHeightForNextPage();
+    };
+});
+
+//ENTER NUMBER OF DAYS THEN PROCEED TO PAGE 4 (SELECT VEHICLE)
+$("#daysOK").click(function(){
+    numberDays = parseInt($("#journeyDays").val());
+    if(numberDays < 1 || numberDays > 15) {
+        alert("Please enter a number from 1 to 15")
+    } else{
+        getHeight();
+        currentPageElement = $("#page4");
+        $("#page3").hide();
+        $(".helpIconBox").show();
+        $("#page4").fadeIn(1000);
+        getHeightForNextPage();
+    };
+});
 
 
 // GET HEIGHT & WIDTH OF CURRENT PAGE
-    function getHeight(){
-        element = $(".pageContainer");
-        height = element.outerHeight();
-        width = element.outerWidth();
-        element.hide();
-    }
+function getHeight(){
+    element = $(".pageContainer");
+    height = element.outerHeight();
+    width = element.outerWidth();
+    element.hide();
+}
 // GET HEIGHT & WIDTH OF NEXT PAGE
-    function getHeightForNextPage(){
-        var height2 = element.outerHeight();
-        var width2 = element.outerWidth();
-        element.css({height: height, width: width});
-        element.show();
-        element.animate({height: height2, width: width2}, 500);
-        setTimeout(function(){
-            element.css({height: '', width: ''});
-        }, 1000);
-    }
-});
+function getHeightForNextPage(){
+    var height2 = element.outerHeight();
+    var width2 = element.outerWidth();
+    element.css({height: height, width: width});
+    element.show();
+    element.animate({height: height2, width: width2}, 500);
+    setTimeout(function(){
+        element.css({height: '', width: ''});
+    }, 1000);
+};
+
 
 // var numberPeople = $("#people").val();

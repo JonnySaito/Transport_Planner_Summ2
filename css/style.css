@@ -201,8 +201,12 @@ h3{
     max-width: 300px;
 }
 
-.peopleIcon, .calendarIcon{
+.peopleIcon{
     width: 1.8em;
+}
+
+.calendarIcon{
+    width: 1.5em;
 }
 
 /* STYLING FOR HELP PAGE */
@@ -228,15 +232,9 @@ h3{
     right: 10px;
 }
 
- /* .midHeader{
-    padding-top: 30px;
-    font-size: 1.2rem;
-    color: #FFFFFF;
+ /* .helpText{
+      padding: 0 20px 20px 40px;
  } */
-
- .helpText{
-     /* padding: 0 20px 20px 40px; */
- }
 
 .helpList{
     padding: 0 20px 20px 60px;
@@ -273,31 +271,6 @@ h3{
         padding: 0 30px 20px 80px;
         font-size: 1.2rem;
     }
-  /* .newZealandHeader{
-      font-size: 9vh;
-  }
-  .roadTripHeader{
-      font-size: 8vh;
-  }
-  .transportPlanner{
-      font-size: 6vh;
-  }
-  .vehicleIcon{
-      width: 15vw;
-      padding: 1.5vw;
-  }
-  .pureNZlogo{
-    width: 20vw;
-  }
-  h2{
-    font-size: 6vw;
-  }
-  .kiaOraText{
-    font-size: 2vw;
-  }
-  .helpContainer{
-      width: 60vw;
-  } */
 }
 
 
@@ -336,24 +309,6 @@ h3{
         padding-left: 100px;
         font-size: 1.5rem;
     }
-    /* .peopleButton{
-        font-size: 1.2rem;
-    }
-    .peopleDrop{
-        font-size: 1.2rem;
-    }
-    .midHeader{
-       padding-top: 40px;
-    }
-    .helpContainer{
-        max-width: 800px;
-    }
-    .midHeader{
-        font-size: 2.5vw;
-    }
-    .helpList{
-        font-size: 1.5rem;
-    } */
 }
 
 @media only screen and (min-width: 1500px){
@@ -374,7 +329,6 @@ h3{
     .kiaOraBox{
         max-width: 860px;
     }
-
     .letsGoBox{
         width: 12rem;
         margin-top: 0;
@@ -396,52 +350,3 @@ h3{
         max-width: 580px;
     }
 }
-/* @media only screen and (min-width: 1200px){ */
-  /* .mainContainer{
-  max-width: 1800px;
-  }
-  .newZealandHeader{
-      font-size: 12vh;
-  }
-  .roadTripHeader{
-      font-size: 10vh;
-  }
-  .transportPlanner{
-      font-size: 8vh;
-  }
-  .vehicleIcon{
-      width: 12vw;
-      padding: 1.5vw;
-  }
-  .pureNZlogo{
-    width: 20vw;
-  }
-  .midHeader{
-     padding-top: 60px;
-  }
- .helpText{
-      padding-left: 70px;
-  }
-} */
-
-/* @media only screen and (min-width: 1800px){ */
-  /* .mainContainer{
-  max-width: 2800px;
-  }
-  .newZealandHeader{
-      font-size: 12vh;
-  }
-  .roadTripHeader{
-      font-size: 10vh;
-  }
-  .transportPlanner{
-      font-size: 8vh;
-  }
-  .vehicleIcon{
-      width: 12vw;
-      padding: 1.5vw;
-  }
-  .pureNZlogo{
-    width: 20vw;
-  }
-} */
