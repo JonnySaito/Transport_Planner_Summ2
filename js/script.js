@@ -54,7 +54,7 @@ $(document).ready(function(){
         currentPageElement = $("#page2");
         $("#page1").hide();
         $(".helpIconBox").show();
-        $("#page2").fadeIn(1000);
+        $("#page2").fadeIn(800);
         getHeightForNextPage();
     });
 });
@@ -64,7 +64,7 @@ $(".goBackIcon").click(function(){
     getHeight();
     currentPageElement.hide();
     $(".helpIconBox").hide();
-    $("#page1").fadeIn(1000);
+    $("#page1").fadeIn(800);
     getHeightForNextPage();
 });
 
@@ -73,32 +73,28 @@ $(".helpIconBox").click(function(){
     getHeight();
     currentPageElement.hide();
     $(".helpIconBox").show();
-    $("#helpContainer").fadeIn(1000);
+    $("#helpContainer").fadeIn(800);
     getHeightForNextPage();
 });
 
 // CLICK X ICON TO RETURN TO PAGE 2 (KIA ORA PAGE)
 $(".closeButton").click(function(){
     $("#helpContainer").hide();
-    currentPageElement.fadeIn(1000);
+    currentPageElement.fadeIn(800);
 });
 
 //ENTER NUMBER OF PEOPLE THEN PROCEED TO PAGE 3 (NUMBER OF DAYS)
 $("#peopleOK").click(function(){
     numberPeople = parseInt($("#people").val());
     console.log(numberPeople);
-    if(!numberPeople){
-        console.log("ERRROR");
-        $('#usernameValidation').text("ERROR");
-    }
-    if(numberPeople < 1 || numberPeople > 6 || !numberPeople) {
-        alert("Please enter a number from 1 to 6");
+    if(numberPeople < 1 || numberPeople > 6 || !numberPeople){
+        $('#peopleValidation').text("ENTER A NUMBER (1 - 6)");
     } else{
         getHeight();
         currentPageElement = $("#page3");
         $("#page2").hide();
         $(".helpIconBox").show();
-        $("#page3").fadeIn(1000);
+        $("#page3").fadeIn(800);
         getHeightForNextPage();
     };
 });
@@ -106,17 +102,24 @@ $("#peopleOK").click(function(){
 //ENTER NUMBER OF DAYS THEN PROCEED TO PAGE 4 (SELECT VEHICLE)
 $("#daysOK").click(function(){
     numberDays = parseInt($("#journeyDays").val());
-    if(numberDays < 1 || numberDays > 15) {
-        alert("Please enter a number from 1 to 15")
+    if(numberDays < 1 || numberDays > 15 || !numberDays) {
+        $("#daysValidation").text("ENTER A NUMBER (1 - 15)")
     } else{
         getHeight();
         currentPageElement = $("#page4");
         $("#page3").hide();
         $(".helpIconBox").show();
-        $("#page4").fadeIn(1000);
+        $("#page4").fadeIn(800);
         getHeightForNextPage();
     };
 });
+
+// GENERATE VEHICLE OPTIONS
+var vehicleChoice;
+
+// if 
+// SHOW VEHICLE OPTIONS
+
 
 
 // GET HEIGHT & WIDTH OF CURRENT PAGE
@@ -135,8 +138,5 @@ function getHeightForNextPage(){
     element.animate({height: height2, width: width2}, 500);
     setTimeout(function(){
         element.css({height: '', width: ''});
-    }, 1000);
+    }, 800);
 };
-
-
-// var numberPeople = $("#people").val();

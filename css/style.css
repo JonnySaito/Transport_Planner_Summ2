@@ -28,15 +28,8 @@ body {
     overflow-y: auto;
     width: 80vw;
     height: 80vh;
-    /* max-width: 600px; */
-    /* margin: 10px; */
     min-height: 100px;
     max-height: 80vh;
-    /* background-color: #232C43; */
-    /* opacity: 0.8; */
-    /* padding: 10px; */
-    /* overflow: hidden; */
-    /* position: relative; */
 }
 
 .mainContainer{
@@ -57,11 +50,6 @@ hr{
     margin: 0vh 15vw;
     text-align: center; */
 }
-
-/* .headerStyle{
-    width: 100%;
-    height: auto;
-} */
 
 .newZealandHeader{
     font-family: 'Impact', sans-serif;
@@ -139,7 +127,7 @@ hr{
   height: 10vh;
 }
 
-/* STYLE FOR PAGE 2 */
+/* STYLE FOR PAGE 2,3,4 */
 
 .helpIconBox{
     height: 1.8rem;
@@ -161,7 +149,7 @@ hr{
     width: 80%;
 }
 
-.kiaOraBox, .daysBox{
+.kiaOraBox, .daysBox, .vehicleBox{
     background-color: #232C43;
     opacity: 0.8;
     display: none;
@@ -172,7 +160,7 @@ hr{
     width: 2.5rem;
 }
 
-.kiaOraWords, .daysWords{
+.kiaOraWords, .daysWords, .vehicleWords{
     text-align: center;
 }
 
@@ -207,6 +195,15 @@ h3{
 
 .calendarIcon{
     width: 1.5em;
+}
+
+.vehicleIconBox{
+    text-align: center;
+}
+
+.bigVehicleIcon{
+    width: 7rem;
+    padding: 2vw;
 }
 
 /* STYLING FOR HELP PAGE */
