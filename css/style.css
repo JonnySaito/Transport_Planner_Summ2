@@ -164,6 +164,10 @@ hr{
     text-align: center;
 }
 
+.vehicleWords{
+    padding: 0 30px;
+}
+
 h2, h3{
     font-family: 'Nunito', sans-serif;
     color: #FFFFFF;
@@ -194,7 +198,7 @@ h3{
 }
 
 .calendarIcon{
-    width: 1.5em;
+    width: 1.4em;
 }
 
 .vehicleIconBox{
@@ -246,6 +250,7 @@ h3{
 @media only screen and (min-width: 450px){
     body{
     font-size: 20px;
+    /*resetting font-size for body so all em and rem will automatically upsize*/
     }
     .vehicleIcon{
         width: 5rem;
@@ -267,6 +272,9 @@ h3{
     .helpList{
         padding: 0 30px 20px 80px;
         font-size: 1.2rem;
+    }
+    .vehicleWords{
+    padding: 0 40px;
     }
 }
 
@@ -306,6 +314,12 @@ h3{
         padding-left: 100px;
         font-size: 1.5rem;
     }
+    .vehicleWords{
+    padding: 0 50px;
+    }
+    .bigVehicleIcon{
+    width: 10rem;
+    }
 }
 
 @media only screen and (min-width: 1500px){
@@ -336,6 +350,9 @@ h3{
     h2{
         font-size: 5rem;
     }
+    h3{
+        font-size: 4rem;
+    }
     .bodyText{
         font-size: 2.2rem;
     }
@@ -345,5 +362,11 @@ h3{
     }
     .helpContainer{
         max-width: 580px;
+    }
+    .vehicleWords{
+    padding: 0 80px;
+    }
+    .bigVehicleIcon{
+    width: 15rem;
     }
 }
