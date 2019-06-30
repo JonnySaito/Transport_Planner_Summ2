@@ -179,7 +179,7 @@ var vehicleOK = function(){
         okVehicles.push(vehicles[3]);
     } else if ((numberPeople == 6) && (numberDays < 16)){
         okVehicles.push(vehicles[3]);
-    }; 
+    };
     console.log(okVehicles);
         // for (var i = 0; i < okVehicles.length; i++) {
         //     okVehicles[i].iconGrey.css(display:none);
@@ -187,12 +187,12 @@ var vehicleOK = function(){
         // }
     // $(".vehicleIconBox").;
         for (var i = 0; i < okVehicles.length; i++) {
-          $('.vehicleIconBox').remove(okVehicles[i].iconGrey);
-          $('.vehicleIconBox').append(okVehicles[i].iconWhite);
+
+// FOR SELECTABLE VEHICLES (I.E. OK VEHICLES), CHANGE GREY ICON TO DISPLAY NONE AND WHITE ICON TO DISPLAY INLINE
         }
     };
 
-    
+
 
 
 // $(generateVehicles)
@@ -222,7 +222,7 @@ var vehicleOK = function(){
 // } else vehicleOptions = null;
 // console.log(vehicleOptions);
 
- 
+
 // SHOW VEHICLE OPTIONS
 
 
