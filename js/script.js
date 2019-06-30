@@ -154,11 +154,12 @@ $("#daysOK").click(function(){
 
 // GENERATE VEHICLE OPTIONS
 
-// var vehicleOptions = [];
+var selectableVehicle = [];
+var okVehicles = [];
 var vehicleOK = function(){
-    var okVehicles = [];
+    // var okVehicles = [];
     if((numberPeople == 1) && (numberDays < 3)){
-    okVehicles.push(vehicles[0], vehicles[1]);
+        okVehicles.push(vehicles[0], vehicles[1]);
     } else if((numberPeople == 1) && (numberDays < 6)){
         okVehicles.push(vehicles[0], vehicles[1], vehicles[2]);
     } else if ((numberPeople == 1) && (numberDays < 11)){
@@ -180,50 +181,45 @@ var vehicleOK = function(){
     } else if ((numberPeople == 6) && (numberDays < 16)){
         okVehicles.push(vehicles[3]);
     };
+// FOR SELECTABLE VEHICLES, CHANGE ICON IMG SOURCE FROM GREY TO WHITE  
+    for (var i = 0; i < okVehicles.length; i++) {
+        var selectableVehicle = $("#"+okVehicles[i].type);
+        selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite);   
+    }
+    console.log('filtered vehicles below')
     console.log(okVehicles);
-        // for (var i = 0; i < okVehicles.length; i++) {
-        //     okVehicles[i].iconGrey.css(display:none);
-        //     okVehicles[i].iconWhite.css(display:inline)
-        // }
-    // $(".vehicleIconBox").;
-        for (var i = 0; i < okVehicles.length; i++) {
+    showVehicleCard();
+};
 
-// FOR SELECTABLE VEHICLES (I.E. OK VEHICLES), CHANGE GREY ICON TO DISPLAY NONE AND WHITE ICON TO DISPLAY INLINE
+// console.log(selectableVehicle);
+
+var motorbike = $("#motorbike");
+var smallCar = $("#smallCar");
+var largeCar = $("#largeCar");;
+var motorhome = $("#motorhome");;
+
+function showVehicleCard(){
+    console.log(okVehicles);
+    // $(".bigVehicleIcon").click(function(){
+    // console.log('you clicked on a vehicle');
+    // }
+    for (var i = 0; i < okVehicles.length; i++) {
+        if (okVehicles[i].type === "motorbike"){
+            console.log("motorbike is in the array")
+            break
+        } 
+        else{
+            console.log("motorbike is not in the array")
         }
-    };
+    }; 
+     $(motorbike).click(function(){
+        console.log('you clicked on an available vehicle');
+    // });
 
+    // console.log('you clicked on something unique (show object properties)');
+    // });
+}; 
 
-
-
-// $(generateVehicles)
-
-// if((numberPeople == 1) && (numberDays < 3)){
-//     vehicleOptions = [vehicles.type('motorbike', 'smallCar')];
-// } else if((numberPeople == 1) && (numberDays < 6)){
-//     vehicleOptions = [vehicles.type('motorbike','smallCar', 'largeCar')];
-// } else if ((numberPeople == 1) && (numberDays < 11)){
-//     vehicleOptions = [vehicles.type('smallCar', 'largeCar')];
-// } else if ((numberPeople == 2) && (numberDays == 1)){
-//     vehicleOptions = [vehicles.type('smallCar')];
-// } else if ((numberPeople == 2) && (numberDays == 2)){
-//     vehicleOptions = [vehicles.type('smallCar', 'motorhome')];
-// } else if ((numberPeople == 2) && (numberDays < 11)){
-//     vehicleOptions = [vehicles.type('smallCar', 'largeCar', 'motorhome')];
-// } else if ((numberPeople == 2) && (numberDays < 16)){
-//     vehicleOptions = [vehicles.type('motorhome')];
-// } else if ((numberPeople < 6) && (numberDays == 2)){
-//     vehicleOptions = [vehicles.type('motorhome')];
-// } else if ((numberPeople < 6) && (numberDays < 11)){
-//     vehicleOptions = [vehicles.type('largeCar', 'motorhome')];
-// } else if ((numberPeople < 6) && (numberDays < 16)){
-//     vehicleOptions = [vehicles.type('motorhome')];
-// } else if ((numberPeople == 6) && (numberDays < 16)){
-//     vehicleOptions = [vehicles.type('motorhome')];
-// } else vehicleOptions = null;
-// console.log(vehicleOptions);
-
-
-// SHOW VEHICLE OPTIONS
 
 
 
