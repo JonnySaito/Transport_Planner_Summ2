@@ -210,6 +210,15 @@ h3{
     padding: 2vw;
 }
 
+.greyVehicleIcon{
+    display: inline;
+}
+
+.whiteVehicleIcon{
+    display: none;
+}
+
+
 /* STYLING FOR HELP PAGE */
 .helpContainer{
     position: relative;
@@ -232,10 +241,6 @@ h3{
     position: absolute;
     right: 10px;
 }
-
- /* .helpText{
-      padding: 0 20px 20px 40px;
- } */
 
 .helpList{
     padding: 0 20px 20px 60px;

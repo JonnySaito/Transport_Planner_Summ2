@@ -7,6 +7,8 @@ var vehicles = [
         daysMin: 1,
         daysMax: 5,
         gasRate: 3.7,
+        iconGrey: 'motorbikeGrey.png',
+        iconWhite: 'motorbikeWhite.png',
     },
     {
         type: 'smallCar',
@@ -16,6 +18,8 @@ var vehicles = [
         daysMin: 1,
         daysMax: 10,
         gasRate: 8.5,
+        iconGrey: 'smallCarGrey.png',
+        iconWhite: 'smallCarWhite.png',
     },
     {
         type: 'largeCar',
@@ -25,6 +29,8 @@ var vehicles = [
         daysMin: 3,
         daysMax: 10,
         gasRate: 9.7,
+        iconGrey: 'suvGrey.png',
+        iconWhite: 'suvWhite.png',
     },
     {
         type: 'motorhome',
@@ -34,6 +40,8 @@ var vehicles = [
         daysMin: 2,
         daysMax: 15,
         gasRate: 17,
+        iconGrey: 'camperVanGrey.png',
+        iconWhite: 'camperVanWhite.png',
     },
 ];
 // GLOBAL VARIABLES
@@ -76,27 +84,11 @@ $(".helpIconBox").click(function(){
     getHeightForNextPage();
 });
 
-// CLICK X ICON TO RETURN TO PAGE 2 (KIA ORA PAGE)
+// CLICK X ICON TO RETURN TO CURRENT PAGE
 $(".closeButton").click(function(){
     $("#helpContainer").hide();
     currentPageElement.fadeIn(800);
 });
-
-//ENTER NUMBER OF PEOPLE THEN PROCEED TO PAGE 3 (NUMBER OF DAYS)
-// $("#peopleOK").click(function(){
-//     numberPeople = parseInt($("#people").val());
-//     console.log(numberPeople);
-//     if(numberPeople < 1 || numberPeople > 6 || !numberPeople){
-//         $('#peopleValidation').text("ENTER A NUMBER (1 - 6)");
-//     } else{
-//         getHeight();
-//         currentPageElement = $("#page3");
-//         $("#page2").hide();
-//         $(".helpIconBox").show();
-//         $("#page3").fadeIn(800);
-//         getHeightForNextPage();
-//     };
-// });
 
 //ENTER NUMBER OF PEOPLE THEN PROCEED TO PAGE 3 (NUMBER OF DAYS)
 $("#peopleOK").click(function(){
@@ -156,37 +148,81 @@ $("#daysOK").click(function(){
         $(".helpIconBox").show();
         $("#page4").fadeIn(800);
         getHeightForNextPage();
+        vehicleOK();
     };
 });
 
 // GENERATE VEHICLE OPTIONS
-var vehicleOptions = [];
 
-if((numberPeople == 1) && (numberDays < 3)){
-    vehicleOptions = [vehicles.type('motorbike', 'smallCar')];
-} else if((numberPeople == 1) && (numberDays < 6)){
-    vehicleOptions = [vehicles.type('motorbike','smallCar', 'largeCar')];
-} else if ((numberPeople == 1) && (numberDays < 11)){
-    vehicleOptions = [vehicles.type('smallCar', 'largeCar')];
-} else if ((numberPeople == 2) && (numberDays == 1)){
-    vehicleOptions = [vehicles.type('smallCar')];
-} else if ((numberPeople == 2) && (numberDays == 2)){
-    vehicleOptions = [vehicles.type('smallCar', 'motorhome')];
-} else if ((numberPeople == 2) && (numberDays < 11)){
-    vehicleOptions = [vehicles.type('smallCar', 'largeCar', 'motorhome')];
-} else if ((numberPeople == 2) && (numberDays < 16)){
-    vehicleOptions = [vehicles.type('motorhome')];
-} else if ((numberPeople < 6) && (numberDays == 2)){
-    vehicleOptions = [vehicles.type('motorhome')];
-} else if ((numberPeople < 6) && (numberDays < 11)){
-    vehicleOptions = [vehicles.type('largeCar', 'motorhome')];
-} else if ((numberPeople < 6) && (numberDays < 16)){
-    vehicleOptions = [vehicles.type('motorhome')];
-} else if ((numberPeople == 6) && (numberDays < 16)){
-    vehicleOptions = [vehicles.type('motorhome')];
-}
+// var vehicleOptions = [];
+var vehicleOK = function(){
+    var okVehicles = [];
+    if((numberPeople == 1) && (numberDays < 3)){
+    okVehicles.push(vehicles[0], vehicles[1]);
+    } else if((numberPeople == 1) && (numberDays < 6)){
+        okVehicles.push(vehicles[0], vehicles[1], vehicles[2]);
+    } else if ((numberPeople == 1) && (numberDays < 11)){
+        okVehicles.push(vehicles[1], vehicles[2]);
+    } else if ((numberPeople == 2) && (numberDays == 1)){
+        okVehicles.push(vehicles[1]);
+    } else if ((numberPeople == 2) && (numberDays == 2)){
+        okVehicles.push(vehicles[1], vehicles[3]);
+    } else if ((numberPeople == 2) && (numberDays < 11)){
+        okVehicles.push(vehicles[1], vehicles[2], vehicles[3]);
+    } else if ((numberPeople == 2) && (numberDays < 16)){
+        okVehicles.push(vehicles[3]);
+    } else if ((numberPeople < 6) && (numberDays == 2)){
+        okVehicles.push(vehicles[3]);
+    } else if ((numberPeople < 6) && (numberDays < 11)){
+        okVehicles.push(vehicles[2], vehicles[3]);
+    } else if ((numberPeople < 6) && (numberDays < 16)){
+        okVehicles.push(vehicles[3]);
+    } else if ((numberPeople == 6) && (numberDays < 16)){
+        okVehicles.push(vehicles[3]);
+    }; 
+    console.log(okVehicles);
+        // for (var i = 0; i < okVehicles.length; i++) {
+        //     okVehicles[i].iconGrey.css(display:none);
+        //     okVehicles[i].iconWhite.css(display:inline)
+        // }
+    // $(".vehicleIconBox").;
+        for (var i = 0; i < okVehicles.length; i++) {
+          $('.vehicleIconBox').remove(okVehicles[i].iconGrey);
+          $('.vehicleIconBox').append(okVehicles[i].iconWhite);
+        }
+    };
 
-//  
+    
+
+
+// $(generateVehicles)
+
+// if((numberPeople == 1) && (numberDays < 3)){
+//     vehicleOptions = [vehicles.type('motorbike', 'smallCar')];
+// } else if((numberPeople == 1) && (numberDays < 6)){
+//     vehicleOptions = [vehicles.type('motorbike','smallCar', 'largeCar')];
+// } else if ((numberPeople == 1) && (numberDays < 11)){
+//     vehicleOptions = [vehicles.type('smallCar', 'largeCar')];
+// } else if ((numberPeople == 2) && (numberDays == 1)){
+//     vehicleOptions = [vehicles.type('smallCar')];
+// } else if ((numberPeople == 2) && (numberDays == 2)){
+//     vehicleOptions = [vehicles.type('smallCar', 'motorhome')];
+// } else if ((numberPeople == 2) && (numberDays < 11)){
+//     vehicleOptions = [vehicles.type('smallCar', 'largeCar', 'motorhome')];
+// } else if ((numberPeople == 2) && (numberDays < 16)){
+//     vehicleOptions = [vehicles.type('motorhome')];
+// } else if ((numberPeople < 6) && (numberDays == 2)){
+//     vehicleOptions = [vehicles.type('motorhome')];
+// } else if ((numberPeople < 6) && (numberDays < 11)){
+//     vehicleOptions = [vehicles.type('largeCar', 'motorhome')];
+// } else if ((numberPeople < 6) && (numberDays < 16)){
+//     vehicleOptions = [vehicles.type('motorhome')];
+// } else if ((numberPeople == 6) && (numberDays < 16)){
+//     vehicleOptions = [vehicles.type('motorhome')];
+// } else vehicleOptions = null;
+// console.log(vehicleOptions);
+
+ 
 // SHOW VEHICLE OPTIONS
 
 
