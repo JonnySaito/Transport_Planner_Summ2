@@ -240,7 +240,16 @@ function showVehicleCard(clickedVehicle){
     }
   }
 }
-// USER CLICKS ON POP-UP VEHICLE CARD TO CONFIRM CHOICE
+// USER CLICKS ON VEHICLE CARD TO CONFIRM CHOICE
+
+$("#vehicleOKbutton").click(function(){
+    getHeight();
+    currentPageElement = $("#page5");
+    $("#page4").hide();
+    $(".helpIconBox").show();
+    $("#page5").fadeIn(800);
+    getHeightForNextPage();
+});
 
 // GO TO MAP STAGE
 

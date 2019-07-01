@@ -145,10 +145,23 @@ hr{
     width: 80%;
 }
 
-.kiaOraBox, .daysBox, .vehicleBox{
+.kiaOraBox, .daysBox, .vehicleBox, .routeBox{
     background-color: #232C43;
     opacity: 0.8;
     display: none;
+}
+
+.vehicleBox{
+    padding-bottom: 15px;
+}
+
+#page5{
+    width: 60%;
+}
+
+.routeInputBox{
+    margin: 0;
+    text-align: left;
 }
 
 .goBackIcon{
@@ -156,7 +169,7 @@ hr{
     width: 2.5rem;
 }
 
-.kiaOraWords, .daysWords, .vehicleWords{
+.kiaOraWords, .daysWords, .vehicleWords, .routeWords{
     text-align: center;
 }
 
@@ -246,7 +259,7 @@ h3{
 }
 
 .vehicleCard{
-  margin: 15px 20px;
+  margin: 15px;
   height: auto;
   background-color: grey;
   padding: 20px;
@@ -254,6 +267,7 @@ h3{
   border: 2px solid #FFFFFF;
   text-align: center;
   display: none;
+  box-shadow: 3px 3px 6px #444444;
 }
 
 #vehicleCardHead{
