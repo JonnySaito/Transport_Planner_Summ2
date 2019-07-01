@@ -1,6 +1,7 @@
 var vehicles = [
     {
         type: 'motorbike',
+        title: 'MOTORBIKE',
         peopleMin: 1,
         peopleMax: 1,
         dailyRate: 109,
@@ -9,9 +10,11 @@ var vehicles = [
         gasRate: 3.7,
         iconGrey: 'motorbikeGrey.png',
         iconWhite: 'motorbikeWhite.png',
+        luggage: 100,
     },
     {
         type: 'smallCar',
+        title: 'SMALL CAR',
         peopleMin: 1,
         peopleMax: 2,
         dailyRate: 129,
@@ -20,9 +23,11 @@ var vehicles = [
         gasRate: 8.5,
         iconGrey: 'smallCarGrey.png',
         iconWhite: 'smallCarWhite.png',
+        luggage: 280,
     },
     {
         type: 'largeCar',
+        title: 'LARGE CAR',
         peopleMin: 1,
         peopleMax: 5,
         dailyRate: 144,
@@ -31,9 +36,11 @@ var vehicles = [
         gasRate: 9.7,
         iconGrey: 'suvGrey.png',
         iconWhite: 'suvWhite.png',
+        luggage: 550,
     },
     {
         type: 'motorhome',
+        title: 'MOTORHOME',
         peopleMin: 2,
         peopleMax: 6,
         dailyRate: 200,
@@ -42,6 +49,7 @@ var vehicles = [
         gasRate: 17,
         iconGrey: 'camperVanGrey.png',
         iconWhite: 'camperVanWhite.png',
+        luggage: 300,
     },
 ];
 // GLOBAL VARIABLES
@@ -122,7 +130,6 @@ $("#daysOK").click(function(){
             timer: "4000",
             heightAuto: false,
         });
-        // $("#daysValidation").text("ENTER A NUMBER (1 - 15)")
     } else if((numberPeople == 1) && (numberDays > 10)){
         Swal.fire({
             type: "error",
@@ -131,7 +138,6 @@ $("#daysOK").click(function(){
             timer: "4000",
             heightAuto: false,
         });
-        // $("#daysValidation").text("TOO LONG. TRY AGAIN!")
     } else if((numberPeople > 2) && (numberDays == 1)){
         Swal.fire({
             type: "error",
@@ -140,7 +146,6 @@ $("#daysOK").click(function(){
             timer: "4000",
             heightAuto: false,
         });
-        // $("#daysValidation").text("TOO SHORT. TRY AGAIN!")
     } else{
         getHeight();
         currentPageElement = $("#page4");
@@ -152,7 +157,7 @@ $("#daysOK").click(function(){
     };
 });
 
-// GENERATE VEHICLE OPTIONS
+// GENERATE VEHICLE OPTIONS BASED ON PARAMETERS & USER INPUT
 
 var selectableVehicle = [];
 var okVehicles = [];
@@ -181,46 +186,63 @@ var vehicleOK = function(){
     } else if ((numberPeople == 6) && (numberDays < 16)){
         okVehicles.push(vehicles[3]);
     };
-// FOR SELECTABLE VEHICLES, CHANGE ICON IMG SOURCE FROM GREY TO WHITE  
+// FOR SELECTABLE VEHICLES, CHANGE ICON IMG SOURCE FROM GREY TO WHITE
     for (var i = 0; i < okVehicles.length; i++) {
         var selectableVehicle = $("#"+okVehicles[i].type);
-        selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite);   
+        selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite).addClass('okVehicles');
     }
     console.log('filtered vehicles below')
     console.log(okVehicles);
     showVehicleCard();
 };
 
-console.log(selectableVehicle);
+// console.log(selectableVehicle);
 
 var motorbike = $("#motorbike");
 var smallCar = $("#smallCar");
 var largeCar = $("#largeCar");;
 var motorhome = $("#motorhome");;
 
-function showVehicleCard(){
-    console.log(okVehicles);
-    // $(".bigVehicleIcon").click(function(){
-    // console.log('you clicked on a vehicle');
-    // }
-    for (var i = 0; i < okVehicles.length; i++) {
-        if (okVehicles[i].type === "motorbike"){
-            console.log("motorbike is in the array")
-            break
-        } 
-        else{
-            console.log("motorbike is not in the array")
-        }
-    }; 
-    //  $(motorbike).click(function(){
-    //     console.log('you clicked on an available vehicle');
-    // });
+$(".greyVehicleIcon").on("click",function(){
+  for (var i = 0; i < okVehicles.length; i++){
+      if (okVehicles[i].type === "motorbike"){
+          if (this.id == "motorbike") {
+            showVehicleCard("motorbike");
+          }
+      } else if (okVehicles[i].type === "smallCar"){
+          if (this.id == "smallCar"){
+            showVehicleCard("smallCar");
+          }
+      } else if (okVehicles[i].type === "largeCar") {
+          if (this.id == "largeCar"){
+            showVehicleCard("largeCar");
+          }
+      } else if (okVehicles[i].type === "motorhome"){
+          if (this.id == "motorhome"){
+            showVehicleCard("motorhome");
+          }
+      }
+  };
+});
 
-    // console.log('you clicked on something unique (show object properties)');
-    // });
-}; 
+// SHOW INFORMATION FOR CLICKED VEHICLE
+function showVehicleCard(clickedVehicle){
+  document.getElementById("vehicleCardHead").innerHTML = "";
+  document.getElementById("vehicleCardInfo").innerHTML = "";
+  for (var j=0; j< okVehicles.length; j++) {
+    console.log(okVehicles[j], clickedVehicle)
+    if (okVehicles[j].type ==clickedVehicle){
+      document.getElementById("vehicleCard").style.display="block";
+      document.getElementById("vehicleCardHead").innerHTML += "<h3>"+okVehicles[j].title+"</h3>";
+      document.getElementById("vehicleCardInfo").innerHTML += "<p>Daily hire (with insurance): "+"$"+okVehicles[j].dailyRate+"</p>";
+      document.getElementById("vehicleCardInfo").innerHTML += "<p>Luggage capacity: "+okVehicles[j].luggage+" litres</p>";
+      document.getElementById("vehicleCardInfo").innerHTML += "<p>Fuel efficiency: "+okVehicles[j].gasRate+" litres per 100km</p>";
+    }
+  }
+}
+// USER CLICKS ON POP-UP VEHICLE CARD TO CONFIRM CHOICE
 
-
+// GO TO MAP STAGE
 
 
 // GET HEIGHT & WIDTH OF CURRENT PAGE
@@ -229,7 +251,7 @@ function getHeight(){
     height = element.outerHeight();
     width = element.outerWidth();
     element.hide();
-}
+};
 // GET HEIGHT & WIDTH OF NEXT PAGE
 function getHeightForNextPage(){
     var height2 = element.outerHeight();
