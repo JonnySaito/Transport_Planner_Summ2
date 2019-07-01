@@ -191,7 +191,7 @@ var vehicleOK = function(){
     showVehicleCard();
 };
 
-// console.log(selectableVehicle);
+console.log(selectableVehicle);
 
 var motorbike = $("#motorbike");
 var smallCar = $("#smallCar");
@@ -212,8 +212,8 @@ function showVehicleCard(){
             console.log("motorbike is not in the array")
         }
     }; 
-     $(motorbike).click(function(){
-        console.log('you clicked on an available vehicle');
+    //  $(motorbike).click(function(){
+    //     console.log('you clicked on an available vehicle');
     // });
 
     // console.log('you clicked on something unique (show object properties)');
