@@ -1,57 +1,93 @@
 var vehicles = [
     {
-        type: 'motorbike',
-        title: 'MOTORBIKE',
+        type: "motorbike",
+        title: "MOTORBIKE",
         peopleMin: 1,
         peopleMax: 1,
         dailyRate: 109,
         daysMin: 1,
         daysMax: 5,
         gasRate: 3.7,
-        iconGrey: 'motorbikeGrey.png',
-        iconWhite: 'motorbikeWhite.png',
+        iconGrey: "motorbikeGrey.png",
+        iconWhite: "motorbikeWhite.png",
         luggage: 100,
     },
     {
-        type: 'smallCar',
-        title: 'SMALL CAR',
+        type: "smallCar",
+        title: "SMALL CAR",
         peopleMin: 1,
         peopleMax: 2,
         dailyRate: 129,
         daysMin: 1,
         daysMax: 10,
         gasRate: 8.5,
-        iconGrey: 'smallCarGrey.png',
-        iconWhite: 'smallCarWhite.png',
+        iconGrey: "smallCarGrey.png",
+        iconWhite: "smallCarWhite.png",
         luggage: 280,
     },
     {
-        type: 'largeCar',
-        title: 'LARGE CAR',
+        type: "largeCar",
+        title: "LARGE CAR",
         peopleMin: 1,
         peopleMax: 5,
         dailyRate: 144,
         daysMin: 3,
         daysMax: 10,
         gasRate: 9.7,
-        iconGrey: 'suvGrey.png',
-        iconWhite: 'suvWhite.png',
+        iconGrey: "suvGrey.png",
+        iconWhite: "suvWhite.png",
         luggage: 550,
     },
     {
-        type: 'motorhome',
-        title: 'MOTORHOME',
+        type: "motorhome",
+        title: "MOTORHOME",
         peopleMin: 2,
         peopleMax: 6,
         dailyRate: 200,
         daysMin: 2,
         daysMax: 15,
         gasRate: 17,
-        iconGrey: 'camperVanGrey.png',
-        iconWhite: 'camperVanWhite.png',
+        iconGrey: "camperVanGrey.png",
+        iconWhite: "camperVanWhite.png",
         luggage: 300,
     },
 ];
+
+// LOCATIONS
+var allLocations = [
+    { id: 1,
+      title: "Auckland",
+      lat: -36.848461,
+      lng: 174.763336,
+    },
+    { id: 2,
+      title: "Rotorua",
+      lat: -38.136848,
+      lng: 176.249741,
+    },
+    { id: 3,
+      title: "Wellington",
+      lat: -41.286461,
+      lng: 174.776230,
+    },
+    { id: 4,
+      title: "Christchurch",
+      lat: -43.532055,
+      lng: 172.636230,
+    },
+    { id: 5,
+      title: "Queenstown",
+      lat: -45.032700,
+      lng: 168.658005,
+    },
+    { id: 6,
+      title: "Dunedin",
+      lat: -45.878761,
+      lng: 170.502792,
+    },   
+
+];
+
 // GLOBAL VARIABLES
 var height;
 var width;
@@ -79,8 +115,16 @@ $(".goBackIcon").click(function(){
     getHeight();
     currentPageElement.hide();
     $(".helpIconBox").hide();
+    $("#vehicleCard").hide();
+    for (var i = 0; i < okVehicles.length; i++) {
+        var selectableVehicle = $("#"+okVehicles[i].type);
+        selectableVehicle.attr("src", "images/"+okVehicles[i].iconGrey).removeClass('okVehicles');
+    }
     $("#page1").fadeIn(800);
     getHeightForNextPage();
+    $("#people").val("");
+    $("#journeyDays").val("");
+    okVehicles = [];
 });
 
 // CLICK ? ICON TO GO TO HELP PAGE
@@ -191,8 +235,8 @@ var vehicleOK = function(){
         var selectableVehicle = $("#"+okVehicles[i].type);
         selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite).addClass('okVehicles');
     }
-    console.log('filtered vehicles below')
-    console.log(okVehicles);
+    // console.log('filtered vehicles below')
+    // console.log(okVehicles);
     showVehicleCard();
 };
 
@@ -204,6 +248,8 @@ var largeCar = $("#largeCar");;
 var motorhome = $("#motorhome");;
 
 $(".greyVehicleIcon").on("click",function(){
+    $("#vehicleCardHead").text("");
+    $("#vehicleCardInfo").text("");
   for (var i = 0; i < okVehicles.length; i++){
       if (okVehicles[i].type === "motorbike"){
           if (this.id == "motorbike") {
@@ -230,7 +276,7 @@ function showVehicleCard(clickedVehicle){
   document.getElementById("vehicleCardHead").innerHTML = "";
   document.getElementById("vehicleCardInfo").innerHTML = "";
   for (var j=0; j< okVehicles.length; j++) {
-    console.log(okVehicles[j], clickedVehicle)
+    // console.log(okVehicles[j], clickedVehicle)
     if (okVehicles[j].type ==clickedVehicle){
       document.getElementById("vehicleCard").style.display="block";
       document.getElementById("vehicleCardHead").innerHTML += "<h3>"+okVehicles[j].title+"</h3>";
@@ -240,8 +286,8 @@ function showVehicleCard(clickedVehicle){
     }
   }
 }
-// USER CLICKS ON VEHICLE CARD TO CONFIRM CHOICE
-
+// USER CLICKS ON VEHICLE CARD TO CONFIRM CHOICE...
+// ...AND GO TO ROUTE PLANNER PAGE
 $("#vehicleOKbutton").click(function(){
     getHeight();
     currentPageElement = $("#page5");
@@ -251,7 +297,113 @@ $("#vehicleOKbutton").click(function(){
     getHeightForNextPage();
 });
 
-// GO TO MAP STAGE
+$("#routeOK").click(function(){
+    var startLoc = $("#startLocation").val();
+    var endLoc = $("#endLocation").val();
+    if (startLoc != endLoc){
+        console.log(startLoc, endLoc);
+        console.log(allLocations);
+        for(var i = 0; i < allLocations.length; i++){
+            //console.log(typeof(startLoc, allLocations[i].title);
+            if (startLoc === allLocations[i].title) {
+                 console.log("start location is ", allLocations[i].lat, allLocations[i].lng);
+            }
+            if (endLoc === allLocations[i].title) {
+                console.log("end location is " , allLocations[i].lat, allLocations[i].lng);
+           }
+           initMap();
+        }
+
+    } else{
+        // alert user
+        console.log("need to choose different start and end")
+    }
+    
+  
+    // getHeight();
+    // currentPageElement = $("#page6");
+    // $("#page5").hide();
+    // $(".helpIconBox").show();
+    // $("#page6").fadeIn(800);
+    // getHeightForNextPage();
+});
+
+function initMap(){
+    map = new google.maps.Map(document.getElementById("page6"), {
+      center: {lat: -41.286461, lng: 174.776230},
+      zoom: 12,
+      // draggable: false,
+      // zoomControl: false,
+
+      styles: [
+        {
+            featureType: "water",
+            stylers: [
+                { color: "#232C43" }
+            ]
+        },
+        {
+            featureType: "road.arterial",
+            elementType: "geometry",
+            stylers: [
+                  { color: "#eda72f" }
+              ]
+        },
+        {
+            featureType: "poi",
+            elementType: "labels.text.fill",
+            stylers: [{color: "#e0695e"}]
+            },
+        {
+            featureType: "poi.park",
+            elementType: "geometry",
+            stylers: [{color: "#abf46b"}]
+        },
+        {
+            featureType: "poi.park",
+            elementType: "labels.text.fill",
+            stylers: [{color: "#888e87"}]
+        },
+        {
+            featureType: "landscape.man_made",
+            elementType: "geometry.fill",
+            stylers: [
+                {color: "#cbd1c5"}
+              ]
+        },
+        {
+            featureType: "transit",
+            elementType: "geometry.fill",
+            stylers: [
+                {color: "#56a82a"}
+              ]
+        }
+      ]
+    });
+
+    var marker1 = new google.maps.Marker({
+        position: {
+            lat: allLocations[i].lat,
+            lng: allLocations[i].lng
+        },
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: 'images/greenmarker.png',
+        markerTitle: allLocations[i].title,
+        markerID: allLocations[i].id
+    });
+    var marker2 = new google.maps.Marker({
+        position: {
+            lat: allLocations[i].lat,
+            lng: allLocations[i].lng
+        },
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: 'images/redmarker.png',
+        markerTitle: allLocations[i].title,
+        markerID: allLocations[i].id
+    });
+};    
 
 
 // GET HEIGHT & WIDTH OF CURRENT PAGE
@@ -269,6 +421,6 @@ function getHeightForNextPage(){
     element.show();
     element.animate({height: height2, width: width2}, 500);
     setTimeout(function(){
-        element.css({height: '', width: ''});
+        element.css({height: "", width: ""});
     }, 800);
 };

@@ -40,7 +40,7 @@
                 </div>
                 <div class="kiaOraBox" id="page2">
                     <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                        <div class="kiaOraWords">
+                        <div class="centreWords">
                             <h2>Kia ora!</h2>
                             <p class="bodyText">There’s so much to see
                                 <br>and do in New Zealand.
@@ -51,8 +51,6 @@
                                 <br>First, how many people
                                 <br>are in your group?
                             </p>
-                            <!-- <div id="peopleValidation" class="text-warning">
-                            </div> -->
                             <div class="inputField">
                                 <div class="input-group mb-3">
                                   <div class="input-group-prepend">
@@ -66,7 +64,7 @@
                 </div>
                 <div class="daysBox" id="page3">
                     <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                        <div class="daysWords">
+                        <div class="centreWords">
                             <h2>Great!</h2>
                             <p class="bodyText">Now, how many days
                                 <br>will you be travelling?
@@ -85,7 +83,7 @@
                 </div>
                 <div class="vehicleBox" id="page4">
                     <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                        <div class="vehicleWords">
+                        <div class="centreWords vehicleWords">
                             <h3>OK, let's have a look at your vehicle options</h3>
                         </div>
                         <div class="vehicleIconBox">
@@ -101,33 +99,76 @@
                           <button id="vehicleOKbutton" type="button" class="btn btn-success">OK</button>
                         </div>
                 </div>
+
                 <div class="routeBox" id="page5">
                     <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                    <div class="routeWords">
+                    <div class="centreWords">
                         <h3>Almost there!</h3>
                         <p class="bodyText">Let's plan your route.
                         </p>
                     </div>
                     <div class="routeInputBox">
-                        <div class="inputField">
-                            <div class="input-group input-group-sm mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">START</span>
-                              </div>
-                              <input id="journeyDays" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <form action="">
+                            <select name="startLocation" class="locationInput" id="startLocation">
+                                <option value="Auckland" >Auckland</option>
+                                <option value="Rotorua">Rotorua</option>
+                                <option value="Wellington">Wellington</option>
+                                <option value="Christchurch">Christchurch</option>
+                                <option value="Queenstown">Queenstown</option>
+                                <option value="Dunedin">Dunedin</option>
+                            </select>
+                            <br> 
+                            <select name="endLocation" class="locationInput" id="endLocation">
+                                <option value="Auckland" >Auckland</option>
+                                <option value="Rotorua">Rotorua</option>
+                                <option value="Wellington">Wellington</option>
+                                <option value="Christchurch">Christchurch</option>
+                                <option value="Queenstown">Queenstown</option>
+                                <option value="Dunedin">Dunedin</option>
+                            </select>         
+                        </form>    
+
+                        <!-- <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FROM</button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Auckland</a>
+                              <a class="dropdown-item" href="#">Rotorua</a>
+                              <a class="dropdown-item" href="#">Wellington</a>
+                              <a class="dropdown-item" href="#">Christchurch</a>
+                              <a class="dropdown-item" href="#">Queenstown</a>
+                              <a class="dropdown-item" href="#">Dunedin</a>
                             </div>
-                        </div>
-                        <div class="inputField">
-                            <div class="input-group input-group-sm mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">END</span>
-                              </div>
-                              <input id="journeyDays" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                              <br/>
-                              <button id="daysOK" type="button" class="btn btn-success">OK</button>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        </div> -->
+                        <!-- <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TO</button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Auckland</a>
+                              <a class="dropdown-item" href="#">Rotorua</a>
+                              <a class="dropdown-item" href="#">Wellington</a>
+                              <a class="dropdown-item" href="#">Christchurch</a>
+                              <a class="dropdown-item" href="#">Queenstown</a>
+                              <a class="dropdown-item" href="#">Dunedin</a>
                             </div>
-                        </div>
-                    </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        </div> -->
+                        <div class="routeConfirmBox">
+                            <button id="routeOK" type="button" class="btn btn-success">OK</button>
+                        </div>   
+                    </div> 
+               </div> 
+               
+               <div class="mapBox" id="page6">
+
+               </div>
+
+
+
+               
 
                 <div class="helpContainer" id="helpContainer">
                     <div class="closeContainer">
@@ -150,11 +191,7 @@
                         </ol>
                     </div>
                 </div>
-
-
-            </div>
-
-
+            </div> 
         </div>
         <div class="footer">
             <div class="nzLogoBox">
@@ -163,6 +200,9 @@
                 </a>
             </div>
         </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRaHG7pQAb9lR73PlhF8Y70vJTC4oO28&libraries=places"
+          type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.all.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

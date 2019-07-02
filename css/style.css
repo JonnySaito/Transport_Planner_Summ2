@@ -157,11 +157,19 @@ hr{
 
 #page5{
     width: 60%;
+    left: 0;
 }
 
 .routeInputBox{
     margin: 0;
-    text-align: left;
+    text-align: center;
+    z-index: 100;
+}
+
+.locationInput{
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 0.8 rem;
 }
 
 .goBackIcon{
@@ -169,7 +177,7 @@ hr{
     width: 2.5rem;
 }
 
-.kiaOraWords, .daysWords, .vehicleWords, .routeWords{
+.centreWords{
     text-align: center;
 }
 
@@ -227,6 +235,21 @@ h3{
     display: none;
 }
 
+.routeConfirmBox{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.mapBox{
+    /* display: none;  */
+    height: 600px;
+    width: 400px;
+
+    /* position: absolute; */
+    /* top: 50%;
+    left: 27%;
+    transform: translate(0,-50%); */
+}
 
 /* STYLING FOR HELP PAGE */
 .helpContainer{
@@ -270,12 +293,9 @@ h3{
   box-shadow: 3px 3px 6px #444444;
 }
 
-#vehicleCardHead{
-
-}
-
-#vehicleCardInfo{
-
+.routeInputBox{
+    width: 60%;
+    margin: 0 auto;
 }
 
 /* MEDIA QUERIES */
@@ -354,6 +374,14 @@ h3{
     width: 10rem;
     }
 }
+
+/*@media only screen and (min-width: 950px){
+    .nzMapBox{
+        top: 50%;
+        left: 27%;
+        transform: translate(0,-50%);
+    }
+}*/
 
 @media only screen and (min-width: 1500px){
     body{
