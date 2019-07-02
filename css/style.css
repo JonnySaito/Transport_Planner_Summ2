@@ -241,9 +241,9 @@ h3{
 }
 
 .mapBox{
-    /* display: none;  */
-    height: 600px;
-    width: 400px;
+    display: none;
+    height: 80%;
+    width: 80%;
 
     /* position: absolute; */
     /* top: 50%;
@@ -296,6 +296,10 @@ h3{
 .routeInputBox{
     width: 60%;
     margin: 0 auto;
+}
+
+.locationText{
+  font-size: 1rem;
 }
 
 /* MEDIA QUERIES */

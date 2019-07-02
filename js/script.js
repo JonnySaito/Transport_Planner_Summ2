@@ -84,7 +84,7 @@ var allLocations = [
       title: "Dunedin",
       lat: -45.878761,
       lng: 170.502792,
-    },   
+    },
 
 ];
 
@@ -298,112 +298,151 @@ $("#vehicleOKbutton").click(function(){
 });
 
 $("#routeOK").click(function(){
+    getHeight();
+    currentPageElement = $("#page6");
+    $("#page5").hide();
+    $(".helpIconBox").show();
+    $("#page6").fadeIn(800);
+    getHeightForNextPage();
+
+//GETTING LATITUDE & LONGITUDE FOR START AND END LOCATIONS
     var startLoc = $("#startLocation").val();
     var endLoc = $("#endLocation").val();
     if (startLoc != endLoc){
         console.log(startLoc, endLoc);
-        console.log(allLocations);
+        // console.log(allLocations);
         for(var i = 0; i < allLocations.length; i++){
-            //console.log(typeof(startLoc, allLocations[i].title);
             if (startLoc === allLocations[i].title) {
                  console.log("start location is ", allLocations[i].lat, allLocations[i].lng);
+                var startLat = allLocations[i].lat;
+                var startLong = allLocations[i].lng;
             }
             if (endLoc === allLocations[i].title) {
                 console.log("end location is " , allLocations[i].lat, allLocations[i].lng);
+                var endLat = allLocations[i].lat;
+                var endLong = allLocations[i].lng;
            }
-           initMap();
-        }
+         }
+           var map = new google.maps.Map(document.getElementById("page6"), {
+             center: {lat: -41.286461, lng: 174.776230},
+             zoom: 5,
+             styles: [
+               {
+                   featureType: "water",
+                   stylers: [
+                       { color: "#232C43" }
+                   ]
+               },
+               {
+                   featureType: "road.arterial",
+                   elementType: "geometry",
+                   stylers: [
+                         { color: "#eda72f" }
+                     ]
+               },
+               {
+                   featureType: "poi",
+                   elementType: "labels.text.fill",
+                   stylers: [{color: "#e0695e"}]
+                   },
+               {
+                   featureType: "poi.park",
+                   elementType: "geometry",
+                   stylers: [{color: "#abf46b"}]
+               },
+               {
+                   featureType: "poi.park",
+                   elementType: "labels.text.fill",
+                   stylers: [{color: "#888e87"}]
+               },
+               {
+                   featureType: "landscape.man_made",
+                   elementType: "geometry.fill",
+                   stylers: [
+                       {color: "#cbd1c5"}
+                     ]
+               },
+               {
+                   featureType: "transit",
+                   elementType: "geometry.fill",
+                   stylers: [
+                       {color: "#56a82a"}
+                     ]
+               }
+             ]
+           });
 
-    } else{
-        // alert user
-        console.log("need to choose different start and end")
-    }
-    
-  
-    // getHeight();
-    // currentPageElement = $("#page6");
-    // $("#page5").hide();
-    // $(".helpIconBox").show();
-    // $("#page6").fadeIn(800);
-    // getHeightForNextPage();
+// ADDING MAP MARKERS
+           var marker1 = new google.maps.Marker({
+               position: {
+                   lat: startLat,
+                   lng: startLong
+               },
+               map: map,
+               animation: google.maps.Animation.DROP,
+               // icon: 'images/greenmarker.png',
+           });
+           var marker2 = new google.maps.Marker({
+               position: {
+                 lat: endLat,
+                 lng: endLong
+               },
+               map: map,
+               animation: google.maps.Animation.DROP,
+               // icon: 'images/redmarker.png',
+           });
+
+           console.log(marker1);
+
+// FINDING DIRECTIONS AND DISTANCE
+           var directionsService = new google.maps.DirectionsService();
+           var directionsDisplay = new google.maps.DirectionsRenderer();
+
+               directionsDisplay.setMap(map);
+
+               directionsService.route({
+                   origin: marker1.position,
+                   destination: marker2.position,
+                   travelMode: 'DRIVING'
+               }, function(response, status){
+                   if(status == 'OK'){
+                       console.log(response.routes[0].legs[0].duration.text);
+                       console.log(response.routes[0].legs[0].distance.text);
+                       document.getElementById("mapResults").innerHTML = ("<p>Distance " + response.routes[0].legs[0].distance.text + "</p>");
+
+                       directionsDisplay.setDirections(response);
+
+                   } else if(status == 'NOT_FOUND'){
+                     Swal.fire({
+                         type: "error",
+                         title: "Sorry!",
+                         text: "Either your start or end point is invalid",
+                         timer: "4000",
+                         heightAuto: false,
+                     });
+                   } else if(status == 'ZERO_RESULTS'){
+                     Swal.fire({
+                         type: "error",
+                         title: "Sorry!",
+                         text: "No route available there",
+                         timer: "4000",
+                         heightAuto: false,
+                     });
+                   }
+               })
+        } else{
+            Swal.fire({
+                type: "error",
+                title: "Oops...",
+                text: "Your start and end points need to be different",
+                timer: "4000",
+                heightAuto: false,
+              });
+            }
 });
 
-function initMap(){
-    map = new google.maps.Map(document.getElementById("page6"), {
-      center: {lat: -41.286461, lng: 174.776230},
-      zoom: 12,
-      // draggable: false,
-      // zoomControl: false,
-
-      styles: [
-        {
-            featureType: "water",
-            stylers: [
-                { color: "#232C43" }
-            ]
-        },
-        {
-            featureType: "road.arterial",
-            elementType: "geometry",
-            stylers: [
-                  { color: "#eda72f" }
-              ]
-        },
-        {
-            featureType: "poi",
-            elementType: "labels.text.fill",
-            stylers: [{color: "#e0695e"}]
-            },
-        {
-            featureType: "poi.park",
-            elementType: "geometry",
-            stylers: [{color: "#abf46b"}]
-        },
-        {
-            featureType: "poi.park",
-            elementType: "labels.text.fill",
-            stylers: [{color: "#888e87"}]
-        },
-        {
-            featureType: "landscape.man_made",
-            elementType: "geometry.fill",
-            stylers: [
-                {color: "#cbd1c5"}
-              ]
-        },
-        {
-            featureType: "transit",
-            elementType: "geometry.fill",
-            stylers: [
-                {color: "#56a82a"}
-              ]
-        }
-      ]
-    });
-
-    var marker1 = new google.maps.Marker({
-        position: {
-            lat: allLocations[i].lat,
-            lng: allLocations[i].lng
-        },
-        map: map,
-        animation: google.maps.Animation.DROP,
-        icon: 'images/greenmarker.png',
-        markerTitle: allLocations[i].title,
-        markerID: allLocations[i].id
-    });
-    var marker2 = new google.maps.Marker({
-        position: {
-            lat: allLocations[i].lat,
-            lng: allLocations[i].lng
-        },
-        map: map,
-        animation: google.maps.Animation.DROP,
-        icon: 'images/redmarker.png',
-        markerTitle: allLocations[i].title,
-        markerID: allLocations[i].id
-    });
-};    
+// function initMap(sLat, sLong, eLat, eLong){
+// };
 
 
 // GET HEIGHT & WIDTH OF CURRENT PAGE
