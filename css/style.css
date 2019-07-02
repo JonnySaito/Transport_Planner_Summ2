@@ -145,19 +145,24 @@ hr{
     width: 80%;
 }
 
-.kiaOraBox, .daysBox, .vehicleBox, .routeBox{
+.boxStyle{
     background-color: #232C43;
     opacity: 0.8;
     display: none;
+    overflow: scroll;
 }
 
-.vehicleBox{
+#page4{
     padding-bottom: 15px;
 }
 
+#vehicleCard{
+    width: 80%;
+}
+
 #page5{
-    width: 60%;
-    left: 0;
+    /* width: 60%;
+    left: 0; */
 }
 
 .routeInputBox{
@@ -169,12 +174,13 @@ hr{
 .locationInput{
     background-color: #FFFFFF;
     color: black;
-    font-size: 0.8 rem;
+    font-size: 1.1em;
 }
 
 .goBackIcon{
     padding: 15px 0 0 15px;
     width: 2.5rem;
+    left: 5px;
 }
 
 .centreWords{
@@ -185,7 +191,7 @@ hr{
     padding: 0 30px;
 }
 
-h2, h3{
+h2, h3, h4{
     font-family: 'Nunito', sans-serif;
     color: #FFFFFF;
 }
@@ -196,6 +202,10 @@ h2{
 
 h3{
     font-size: 1.5rem;
+}
+
+h4{
+    font-size: 1.3em;
 }
 
 .bodyText{
@@ -241,22 +251,24 @@ h3{
 }
 
 .mapBox{
-    display: none;
-    height: 80%;
-    width: 80%;
+    margin: 0 auto;
+    height: 90%;
+    width: 90%;
+}
 
-    /* position: absolute; */
-    /* top: 50%;
-    left: 27%;
-    transform: translate(0,-50%); */
+#mapContainer{
+    height: 60%;
+    width: 60%;
+}
+
+#mapResults{
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* STYLING FOR HELP PAGE */
-.helpContainer{
+#helpContainer{
     position: relative;
-    background-color: #232C43;
-    opacity: 0.8;
-    display: none;
 }
 
 .helpWords{
@@ -276,21 +288,27 @@ h3{
 
 .helpList{
     padding: 0 20px 20px 60px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1rem;
-    color: #FFFFFF;
 }
 
 .vehicleCard{
-  margin: 15px;
-  height: auto;
-  background-color: grey;
-  padding: 20px;
-  border-radius: 25px;
-  border: 2px solid #FFFFFF;
-  text-align: center;
-  display: none;
-  box-shadow: 3px 3px 6px #444444;
+    margin: 0 auto;
+    height: auto;
+    background-color: grey;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    overflow: scroll;
+    display: none;
+}
+
+#vehicleCardInfo{
+    text-align: center;
+    margin: 0 10px;
+}
+
+#vehicleCardHead{
+    font-size: 1.2em;
 }
 
 .routeInputBox{
@@ -298,9 +316,9 @@ h3{
     margin: 0 auto;
 }
 
-.locationText{
-  font-size: 1rem;
-}
+/* .locationText{
+  font-size: 0.6em;
+} */
 
 /* MEDIA QUERIES */
 
@@ -332,6 +350,10 @@ h3{
     }
     .vehicleWords{
     padding: 0 40px;
+    }
+
+    #vehicleCardInfo{
+        margin: 0 20px;
     }
 }
 
@@ -377,6 +399,10 @@ h3{
     .bigVehicleIcon{
     width: 10rem;
     }
+
+    #vehicleCardInfo{
+        margin: 0 30px;
+    }
 }
 
 /*@media only screen and (min-width: 950px){
@@ -402,9 +428,11 @@ h3{
         display: flex;
         justify-content: center;
     }
-    .kiaOraBox{
+
+    .page2{
         max-width: 860px;
     }
+
     .letsGoBox{
         width: 12rem;
         margin-top: 0;
@@ -433,5 +461,9 @@ h3{
     }
     .bigVehicleIcon{
     width: 15rem;
+    }
+
+    #vehicleCardInfo{
+        margin: 0 50px;
     }
 }

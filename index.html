@@ -1,188 +1,188 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Transport Planner</title>
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="icon" type="image/png" href="images/transportFavicon.ico">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="pageContainer">
-            <div class="contentBox">
-                <div class="mainContainer" id="page1">
-                    <div class="mainHeaderContainer">
-                        <hr></hr>
-                        <p class="newZealandHeader">NEW ZEALAND</p>
-                        <p class="roadTripHeader">Road Trip</p>
-                        <hr></hr>
-                    </div>
-                    <div class="appName">
-                        <p class="transportPlanner">TRANSPORT PLANNER</p>
-                    </div>
-                    <div class="iconRow headerStyle">
-                        <img class="vehicleIcon" src="images/camperVan.png" alt="icon of campervan">
-                        <img class="vehicleIcon" src="images/smallCar.png" alt="icon of small car">
-                        <img class="vehicleIcon" src="images/motorbike.png" alt="icon of motorbike">
-                        <img class="vehicleIcon" src="images/suv.png" alt="icon of s.u.v.">
-                    </div>
-                    <div class="letsGoBox">
-                        <p class="letsGoHeader">Let's go!</p>
-                    </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transport Planner</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/transportFavicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pageContainer">
+        <div class="contentBox">
+            <div class="mainContainer" id="page1">
+                <div class="mainHeaderContainer">
+                    <hr></hr>
+                    <p class="newZealandHeader">NEW ZEALAND</p>
+                    <p class="roadTripHeader">Road Trip</p>
+                    <hr></hr>
                 </div>
-                <div class="helpIconBox">
-                    <img src="images/questionIcon.png" alt="question mark">
+                <div class="appName">
+                    <p class="transportPlanner">TRANSPORT PLANNER</p>
                 </div>
-                <div class="kiaOraBox" id="page2">
-                    <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                        <div class="centreWords">
-                            <h2>Kia ora!</h2>
-                            <p class="bodyText">There’s so much to see
-                                <br>and do in New Zealand.
-                                <br>And self-driving is a great
-                                <br>way to get around.
-                                <br><br>
-                                So let’s get started.
-                                <br>First, how many people
-                                <br>are in your group?
-                            </p>
-                            <div class="inputField">
-                                <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/people.svg" class="peopleIcon"></img></span>
-                                  </div>
-                                  <input id="people" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                  <button id="peopleOK" type="button" class="btn btn-success">OK</button>
-                                </div>
+                <div class="iconRow headerStyle">
+                    <img class="vehicleIcon" src="images/camperVan.png" alt="icon of campervan">
+                    <img class="vehicleIcon" src="images/smallCar.png" alt="icon of small car">
+                    <img class="vehicleIcon" src="images/motorbike.png" alt="icon of motorbike">
+                    <img class="vehicleIcon" src="images/suv.png" alt="icon of s.u.v.">
+                </div>
+                <div class="letsGoBox">
+                    <p class="letsGoHeader">Let's go!</p>
+                </div>
+            </div>
+            <div class="helpIconBox">
+                <img src="images/questionIcon.png" alt="question mark">
+            </div>
+            <div class="boxStyle" id="page2">
+                <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                <div class="centreWords">
+                    <h2>Kia ora!</h2>
+                    <p class="bodyText">There’s so much to see
+                        <br>and do in New Zealand.
+                        <br>And self-driving is a great
+                        <br>way to get around.
+                        <br><br>
+                        So let’s get started.
+                        <br>First, how many people
+                        <br>are in your group?
+                    </p>
+                    <div class="inputField">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/people.svg" class="peopleIcon"></img></span>
                             </div>
+                            <input id="people" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <button id="peopleOK" type="button" class="btn btn-success">OK</button>
                         </div>
+                    </div>
                 </div>
-                <div class="daysBox" id="page3">
-                    <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                        <div class="centreWords">
-                            <h2>Great!</h2>
-                            <p class="bodyText">Now, how many days
-                                <br>will you be travelling?
-                            </p>
+            </div>
+            <div class="boxStyle" id="page3">
+                <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                <div class="centreWords">
+                    <h2>Great!</h2>
+                    <p class="bodyText">Now, how many days
+                        <br>will you be travelling?
+                    </p>
 
-                            <div class="inputField">
-                                <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/calendarIcon.png" class="calendarIcon"></img></span>
-                                  </div>
-                                  <input id="journeyDays" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                  <button id="daysOK" type="button" class="btn btn-success">OK</button>
-                                </div>
+                    <div class="inputField">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/calendarIcon.png" class="calendarIcon"></img></span>
                             </div>
+                            <input id="journeyDays" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <button id="daysOK" type="button" class="btn btn-success">OK</button>
                         </div>
+                    </div>
                 </div>
-                <div class="vehicleBox" id="page4">
-                    <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                        <div class="centreWords vehicleWords">
-                            <h3>OK, let's have a look at your vehicle options</h3>
-                        </div>
-                        <div class="vehicleIconBox">
-                            <img class="bigVehicleIcon greyVehicleIcon" id="motorbike" src="images/motorbikeGrey.png" alt="icon of motorbike">
-                            <img class="bigVehicleIcon greyVehicleIcon" id="smallCar"  src="images/smallCarGrey.png" alt="icon of small car">
-                            <br>
-                            <img class="bigVehicleIcon greyVehicleIcon" id="largeCar" src="images/suvGrey.png" alt="icon of s.u.v.">
-                            <img class="bigVehicleIcon greyVehicleIcon" id="motorhome" src="images/camperVanGrey.png" alt="icon of campervan">
-                        </div>
-                        <div class="vehicleCard" id="vehicleCard">
-                          <h3 id="vehicleCardHead"></h3>
-                          <p class="bodyText" id="vehicleCardInfo"></p>
-                          <button id="vehicleOKbutton" type="button" class="btn btn-success">OK</button>
-                        </div>
+            </div>
+            <div class="boxStyle" id="page4">
+                <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                <div class="centreWords vehicleWords">
+                    <h3>OK, let's have a look at your vehicle options</h3>
+                </div>
+                <div class="vehicleIconBox">
+                    <img class="bigVehicleIcon greyVehicleIcon" id="motorbike" src="images/motorbikeGrey.png" alt="icon of motorbike">
+                    <img class="bigVehicleIcon greyVehicleIcon" id="smallCar"  src="images/smallCarGrey.png" alt="icon of small car">
+                    <br>
+                    <img class="bigVehicleIcon greyVehicleIcon" id="largeCar" src="images/suvGrey.png" alt="icon of s.u.v.">
+                    <img class="bigVehicleIcon greyVehicleIcon" id="motorhome" src="images/camperVanGrey.png" alt="icon of campervan">
+                </div>
+                <div class="vehicleCard" id="vehicleCard">
+                    <h3 id="vehicleCardHead"></h3>
+                    <p class="bodyText" id="vehicleCardInfo"></p>
+                    <button id="vehicleOKbutton" type="button" class="btn btn-success">OK</button>
+                </div>
+            </div>
+            <div class="boxStyle" id="page5">
+                <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                <div class="centreWords">
+                    <h3>Almost there!</h3>
+                    <p class="bodyText">Let's plan your route.
+                    </p>
+                </div>
+                <div class="routeInputBox">
+                    <form action="">
+                        <select name="startLocation" class="locationText locationInput" id="startLocation">
+                            <option class="locationPlaceholder" value="" disabled selected>START</option>
+                            <option value="Auckland">Auckland</option>
+                            <option value="Rotorua">Rotorua</option>
+                            <option value="Wellington">Wellington</option>
+                            <option value="Christchurch">Christchurch</option>
+                            <option value="Queenstown">Queenstown</option>
+                            <option value="Dunedin">Dunedin</option>
+                        </select>
+                        <br>
+                        <select name="endLocation" class="locationText locationInput" id="endLocation">
+                            <option class="locationPlaceholder" value="" disabled selected>END</option>
+                            <option value="Auckland">Auckland</option>
+                            <option value="Rotorua">Rotorua</option>
+                            <option value="Wellington">Wellington</option>
+                            <option value="Christchurch">Christchurch</option>
+                            <option value="Queenstown">Queenstown</option>
+                            <option value="Dunedin">Dunedin</option>
+                        </select>
+                    </form>
+                    <br>
+                    <div class="routeConfirmBox">
+                        <button id="routeOK" type="button" class="btn btn-success">OK</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boxStyle" id="page6">
+                <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                <div id="mapContainer">
+
+                </div>
+                <div id="mapResults" class="bodyText">
+
                 </div>
 
-                <div class="routeBox" id="page5">
-                    <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
-                    <div class="centreWords">
-                        <h3>Almost there!</h3>
-                        <p class="bodyText">Let's plan your route.
-                        </p>
-                    </div>
-                    <div class="routeInputBox">
-                        <form action="">
-                            <select name="startLocation" class="locationInput" id="startLocation">
-                                <option class="locationText" value="Auckland">Auckland</option>
-                                <option class="locationText" value="Rotorua">Rotorua</option>
-                                <option class="locationText" value="Wellington">Wellington</option>
-                                <option class="locationText" value="Christchurch">Christchurch</option>
-                                <option class="locationText" value="Queenstown">Queenstown</option>
-                                <option class="locationText" value="Dunedin">Dunedin</option>
-                            </select>
-                            <br>
-                            <select name="endLocation" class="locationInput" id="endLocation">
-                                <option class="locationText" value="Auckland">Auckland</option>
-                                <option class="locationText" value="Rotorua">Rotorua</option>
-                                <option class="locationText" value="Wellington">Wellington</option>
-                                <option class="locationText" value="Christchurch">Christchurch</option>
-                                <option class="locationText" value="Queenstown">Queenstown</option>
-                                <option class="locationText" value="Dunedin">Dunedin</option>
-                            </select>
-                        </form>
+            </div>
 
-                        <div class="routeConfirmBox">
-                            <button id="routeOK" type="button" class="btn btn-success">OK</button>
-                        </div>
-                    </div>
-               </div>
-
-               <div class="mapBox" id="page6">
-                 <div id="mapResults">
-
-                 </div>
-
-               </div>
-
-
-
-
-
-                <div class="helpContainer" id="helpContainer">
-                    <div class="closeContainer">
-                        <img class="closeIcon closeButton" src="images/closeIcon.png" alt="close window icon">
-                    </div>
-                    <div class="helpWords">
-                        <h3>Planning with us is easy. <br> Here's how it works.</h3>
-                    </div>
-                    <div class="bodyText helpText">
-                        <ol class="helpList">
-                            <li >Tell us how many people
-                                 you’re travelling with.</li>
+            <div class="boxStyle" id="helpContainer">
+                <div class="closeContainer">
+                    <img class="closeIcon closeButton" src="images/closeIcon.png" alt="close window icon">
+                </div>
+                <div class="helpWords">
+                    <h3>Planning with us is easy. <br> Here's how it works.</h3>
+                </div>
+                <div class="bodyText helpText">
+                    <ol class="bodyText helpList">
+                        <li >Tell us how many people
+                            you’re travelling with.</li>
                             <li>Tell us how many days
-                                 your trip is.</li>
-                            <li>Choose a vehicle.</li>
-                            <li>Select your start and end
-                                 points.</li>
-                            <li>See the total cost. </li>
-                            <li>Start packing your bags!</li>
-                        </ol>
+                                your trip is.</li>
+                                <li>Choose a vehicle.</li>
+                                <li>Select your start and end
+                                    points.</li>
+                                    <li>See the total cost. </li>
+                                    <li>Start packing your bags!</li>
+                                </ol>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="nzLogoBox">
-                <a href="https://www.newzealand.com/int/" target="_blank">
-                    <img class="pureNZlogo" src="images/pureNZlogo.png" alt="logo for 100% Pure NZ campaign">
-                </a>
-            </div>
-        </div>
+                <div class="footer">
+                    <div class="nzLogoBox">
+                        <a href="https://www.newzealand.com/int/" target="_blank">
+                            <img class="pureNZlogo" src="images/pureNZlogo.png" alt="logo for 100% Pure NZ campaign">
+                        </a>
+                    </div>
+                </div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRaHG7pQAb9lR73PlhF8Y70vJTC4oO28&libraries=places"
-          type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.all.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    	<script src="js/script.js"></script>
-    </body>
-</html>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRaHG7pQAb9lR73PlhF8Y70vJTC4oO28&libraries=places"
+                type="text/javascript"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.all.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="js/script.js"></script>
+            </body>
+            </html>

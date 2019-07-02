@@ -235,13 +235,8 @@ var vehicleOK = function(){
         var selectableVehicle = $("#"+okVehicles[i].type);
         selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite).addClass('okVehicles');
     }
-    // console.log('filtered vehicles below')
-    // console.log(okVehicles);
     showVehicleCard();
 };
-
-// console.log(selectableVehicle);
-
 var motorbike = $("#motorbike");
 var smallCar = $("#smallCar");
 var largeCar = $("#largeCar");;
@@ -279,10 +274,10 @@ function showVehicleCard(clickedVehicle){
     // console.log(okVehicles[j], clickedVehicle)
     if (okVehicles[j].type ==clickedVehicle){
       document.getElementById("vehicleCard").style.display="block";
-      document.getElementById("vehicleCardHead").innerHTML += "<h3>"+okVehicles[j].title+"</h3>";
-      document.getElementById("vehicleCardInfo").innerHTML += "<p>Daily hire (with insurance): "+"$"+okVehicles[j].dailyRate+"</p>";
-      document.getElementById("vehicleCardInfo").innerHTML += "<p>Luggage capacity: "+okVehicles[j].luggage+" litres</p>";
-      document.getElementById("vehicleCardInfo").innerHTML += "<p>Fuel efficiency: "+okVehicles[j].gasRate+" litres per 100km</p>";
+      document.getElementById("vehicleCardHead").innerHTML += "<h4>"+okVehicles[j].title+"</h4>";
+      document.getElementById("vehicleCardInfo").innerHTML += "<p>Daily hire: "+"$"+okVehicles[j].dailyRate+"</p>";
+      document.getElementById("vehicleCardInfo").innerHTML += "<p>Luggage: "+okVehicles[j].luggage+" L</p>";
+      document.getElementById("vehicleCardInfo").innerHTML += "<p>Petrol: "+okVehicles[j].gasRate+" L / 100km</p>";
     }
   }
 }
@@ -298,6 +293,8 @@ $("#vehicleOKbutton").click(function(){
 });
 
 $("#routeOK").click(function(){
+    // ALERT IF FROM OR TO LOCATION NOT SELECTED
+    // if(){}
     getHeight();
     currentPageElement = $("#page6");
     $("#page5").hide();
@@ -323,9 +320,9 @@ $("#routeOK").click(function(){
                 var endLong = allLocations[i].lng;
            }
          }
-           var map = new google.maps.Map(document.getElementById("page6"), {
+           var map = new google.maps.Map(document.getElementById("mapContainer"), {
              center: {lat: -41.286461, lng: 174.776230},
-             zoom: 5,
+             zoom: 4,
              styles: [
                {
                    featureType: "water",
@@ -406,9 +403,11 @@ $("#routeOK").click(function(){
                    travelMode: 'DRIVING'
                }, function(response, status){
                    if(status == 'OK'){
-                       console.log(response.routes[0].legs[0].duration.text);
-                       console.log(response.routes[0].legs[0].distance.text);
-                       document.getElementById("mapResults").innerHTML = ("<p>Distance " + response.routes[0].legs[0].distance.text + "</p>");
+                       // console.log(response.routes[0].legs[0].duration.text);
+                       // console.log(response.routes[0].legs[0].distance.text);
+                       document.getElementById("mapResults").innerHTML += startLoc + "<span> to </span>" + endLoc + "<br/>";
+                       document.getElementById("mapResults").innerHTML += "<p>Distance: " + response.routes[0].legs[0].distance.text + "</p>";
+                       document.getElementById("mapResults").innerHTML += "<p>Driving time: " + response.routes[0].legs[0].duration.text + "</p>";
 
                        directionsDisplay.setDirections(response);
 
