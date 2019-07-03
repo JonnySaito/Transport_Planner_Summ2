@@ -124,6 +124,8 @@ $(".goBackIcon").click(function(){
     $("#people").val("");
     $("#journeyDays").val("");
     okVehicles = [];
+    $("#mapResults").html("");
+    $(".locationInput").val("");
 });
 
 // CLICK ? ICON TO GO TO HELP PAGE
@@ -240,6 +242,7 @@ var motorbike = $("#motorbike");
 var smallCar = $("#smallCar");
 var largeCar = $("#largeCar");;
 var motorhome = $("#motorhome");;
+var chosenVehicle;
 
 $(".greyVehicleIcon").on("click",function(){
     $("#vehicleCardHead").text("");
@@ -248,18 +251,22 @@ $(".greyVehicleIcon").on("click",function(){
       if (okVehicles[i].type === "motorbike"){
           if (this.id == "motorbike") {
             showVehicleCard("motorbike");
+            chosenVehicle = "motorbike";
           }
       } else if (okVehicles[i].type === "smallCar"){
           if (this.id == "smallCar"){
             showVehicleCard("smallCar");
+            chosenVehicle = "smallCar";
           }
       } else if (okVehicles[i].type === "largeCar") {
           if (this.id == "largeCar"){
             showVehicleCard("largeCar");
+            chosenVehicle = "largeCar";
           }
       } else if (okVehicles[i].type === "motorhome"){
           if (this.id == "motorhome"){
             showVehicleCard("motorhome");
+            chosenVehicle = "motorhome";
           }
       }
   };
@@ -270,14 +277,12 @@ function showVehicleCard(clickedVehicle){
   document.getElementById("vehicleCardHead").innerHTML = "";
   document.getElementById("vehicleCardInfo").innerHTML = "";
   for (var j=0; j< okVehicles.length; j++) {
-    // console.log(okVehicles[j], clickedVehicle)
     if (okVehicles[j].type == clickedVehicle){
       document.getElementById("vehicleCard").style.display="block";
       document.getElementById("vehicleCardHead").innerHTML += "<h4>"+okVehicles[j].title+"</h4>";
       document.getElementById("vehicleCardInfo").innerHTML += "<p>Daily hire: "+"$"+okVehicles[j].dailyRate+"</p>";
       document.getElementById("vehicleCardInfo").innerHTML += "<p>Luggage: "+okVehicles[j].luggage+" L</p>";
       document.getElementById("vehicleCardInfo").innerHTML += "<p>Petrol: "+okVehicles[j].gasRate+" L / 100km</p>";
-      // ???DECLARE VARIABLE FOR CHOSEN VEHICLE HERE???
     }
   }
 }
@@ -290,19 +295,14 @@ $("#vehicleOKbutton").click(function(){
     $(".helpIconBox").show();
     $("#page5").fadeIn(800);
     getHeightForNextPage();
-
 });
 
 $("#routeOK").click(function(){
-
-    // if(){}
-
-
 //GETTING LATITUDE & LONGITUDE FOR START AND END LOCATIONS
     var startLoc = $("#startLocation").val();
     var endLoc = $("#endLocation").val();
     if((!startLoc) || (!endLoc)){
-// ALERT IF FROM OR TO LOCATION NOT SELECTED
+// ALERT IF START OR END LOCATION IS NOT SELECTED
         Swal.fire({
             type: "error",
             title: "Wait!",
@@ -310,16 +310,13 @@ $("#routeOK").click(function(){
             timer: "4000",
             heightAuto: false,
         });
-
     }else if (startLoc != endLoc){
         getHeight();
         currentPageElement = $("#page6");
         $("#page5").hide();
-        $(".helpIconBox").show();
+        $(".helpIconBox").hide();
         $("#page6").fadeIn(800);
         getHeightForNextPage();
-        console.log(startLoc, endLoc);
-        // console.log(allLocations);
         for(var i = 0; i < allLocations.length; i++){
             if (startLoc === allLocations[i].title) {
                  console.log("start location is ", allLocations[i].lat, allLocations[i].lng);
@@ -334,7 +331,12 @@ $("#routeOK").click(function(){
          }
            var map = new google.maps.Map(document.getElementById("mapContainer"), {
              center: {lat: -41.286461, lng: 174.776230},
-             zoom: 4,
+             // zoom: 4,
+             // mapTypeControl: false,
+             disableDefaultUI: true,
+             // draggable: false,
+             // maxZoom: 12,
+             minZoom: 4.5,
              styles: [
                {
                    featureType: "water",
@@ -415,14 +417,16 @@ $("#routeOK").click(function(){
                    travelMode: 'DRIVING'
                }, function(response, status){
                    if(status == 'OK'){
-                       var vehicleRentalCalc =
+
+                       // var vehicleRentalCalc =
+                       console.log(numberDays);
                        // console.log(response.routes[0].legs[0].distance.text);
                        document.getElementById("mapResults").innerHTML += startLoc + "<span> to </span>" + endLoc + "<br/>";
                        document.getElementById("mapResults").innerHTML += "<p>Distance: " + response.routes[0].legs[0].distance.text + "</p>";
                        document.getElementById("mapResults").innerHTML += "<p>Driving time: " + response.routes[0].legs[0].duration.text + "</p>";
                        // document.getElementById("mapResults").innerHTML += "<p>Vehicle rental: $" + vehicleRentalCalc + "</p>";
                        // document.getElementById("mapResults").innerHTML += "<p>Petrol: $" + gasCalc + "</p>";
-                       // document.getElementById("mapResults").innerHTML += "<p>TOTAL: $" + totalCalc + "</p>";
+                       // document.getElementById("mapResults").innerHTML += "<p>TOTAL COST: $" + totalCalc + "</p>";
                        directionsDisplay.setDirections(response);
 
                    } else if(status == 'NOT_FOUND'){

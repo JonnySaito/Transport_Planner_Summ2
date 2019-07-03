@@ -13,7 +13,10 @@ body {
     width: auto;
     height: 100vh;
     overflow: hidden;
-    /* IS THIS PREVENTING Y-AXIS SCROLLING? */
+}
+
+p{
+    margin: 0;
 }
 
 .pageContainer{
@@ -29,8 +32,6 @@ body {
     overflow-y: auto;
     min-width: 240px;
     width: 80%;
-    /* min-height: 100px;
-    max-height: 80vh; */
 }
 
 .mainContainer{
@@ -42,7 +43,7 @@ body {
 hr{
     border: none;
     background-color: #232C43;
-    height: 1.5px;
+    height: 1px;
     margin: 0;
 }
 
@@ -64,7 +65,7 @@ hr{
     font-family: 'Pacifico', cursive;
     font-size: 3em;
     color: #232C43;
-    padding: 0px 20px;
+    padding: 0px 20px 10px 20px;
     text-align: center;
 }
 
@@ -276,6 +277,7 @@ h4{
 #mapResults{
     margin: 0 auto;
     text-align: center;
+    padding: 10px;
 }
 
 /* STYLING FOR HELP PAGE */
@@ -378,6 +380,12 @@ select{
 @media only screen and (min-width: 650px){
     body{
     font-size: 30px;
+    }
+    hr{
+        height: 2px;
+    }
+    .roadTripHeader{
+        padding-bottom: 20px;
     }
     .vehicleIcon{
         width: 6rem;
