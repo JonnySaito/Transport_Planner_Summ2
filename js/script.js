@@ -207,6 +207,7 @@ $("#daysOK").click(function(){
 
 // GENERATE VEHICLE OPTIONS BASED ON PARAMETERS & USER INPUT
 
+// GLOBAL VARIABLES
 var selectableVehicle = [];
 var okVehicles = [];
 var vehicleOK = function(){
@@ -238,8 +239,9 @@ var vehicleOK = function(){
         var selectableVehicle = $("#"+okVehicles[i].type);
         selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite).addClass("okVehicles");
     }
-    showVehicleCard();
 };
+
+// GLOBAL VARIABLES
 var motorbike = $("#motorbike");
 var smallCar = $("#smallCar");
 var largeCar = $("#largeCar");;
@@ -247,33 +249,26 @@ var motorhome = $("#motorhome");;
 var chosenVehicle;
 
 $(".greyVehicleIcon").on("click",function(){
-    $("#vehicleCardHead").text("");
-    $("#vehicleCardInfo").text("");
-    // $(".vehicleOKbuttonBox").html("");
   for (var i = 0; i < okVehicles.length; i++){
       if (okVehicles[i].type === "motorbike"){
           if (this.id == "motorbike") {
             showVehicleCard("motorbike");
             chosenVehicle = "motorbike";
-            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       } else if (okVehicles[i].type === "smallCar"){
           if (this.id == "smallCar"){
             showVehicleCard("smallCar");
             chosenVehicle = "smallCar";
-            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       } else if (okVehicles[i].type === "largeCar") {
           if (this.id == "largeCar"){
             showVehicleCard("largeCar");
             chosenVehicle = "largeCar";
-            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       } else if (okVehicles[i].type === "motorhome"){
           if (this.id == "motorhome"){
             showVehicleCard("motorhome");
             chosenVehicle = "motorhome";
-            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       }
   };
@@ -336,11 +331,7 @@ $("#routeOK").click(function(){
          }
            var map = new google.maps.Map(document.getElementById("mapContainer"), {
              center: {lat: -41.286461, lng: 174.776230},
-             // zoom: 4,
-             // mapTypeControl: false,
              disableDefaultUI: true,
-             // draggable: false,
-             // maxZoom: 12,
              minZoom: 4.5,
              styles: [
                {
