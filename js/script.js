@@ -95,6 +95,7 @@ var element;
 var currentPageElement;
 var numberPeople;
 var numberDays;
+var gasPrice = 2.269;
 
 
 // PAGE LOADING + CLICK TO START
@@ -117,7 +118,7 @@ $(".goBackIcon").click(function(){
     $("#vehicleCard").hide();
     for (var i = 0; i < okVehicles.length; i++) {
         var selectableVehicle = $("#"+okVehicles[i].type);
-        selectableVehicle.attr("src", "images/"+okVehicles[i].iconGrey).removeClass('okVehicles');
+        selectableVehicle.attr("src", "images/"+okVehicles[i].iconGrey).removeClass("okVehicles");
     }
     $("#page1").fadeIn(800);
     getHeightForNextPage();
@@ -147,6 +148,7 @@ $(".closeButton").click(function(){
 $("#peopleOK").click(function(){
     numberPeople = parseInt($("#people").val());
     if(numberPeople < 1 || numberPeople > 6 || !numberPeople){
+// PLUG-IN: SWEET ALERT
         Swal.fire({
             type: "error",
             title: "Oops...",
@@ -234,7 +236,7 @@ var vehicleOK = function(){
 // FOR SELECTABLE VEHICLES, CHANGE ICON IMG SOURCE FROM GREY TO WHITE
     for (var i = 0; i < okVehicles.length; i++) {
         var selectableVehicle = $("#"+okVehicles[i].type);
-        selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite).addClass('okVehicles');
+        selectableVehicle.attr("src", "images/"+okVehicles[i].iconWhite).addClass("okVehicles");
     }
     showVehicleCard();
 };
@@ -319,12 +321,10 @@ $("#routeOK").click(function(){
         getHeightForNextPage();
         for(var i = 0; i < allLocations.length; i++){
             if (startLoc === allLocations[i].title) {
-                 console.log("start location is ", allLocations[i].lat, allLocations[i].lng);
                 var startLat = allLocations[i].lat;
                 var startLong = allLocations[i].lng;
             }
             if (endLoc === allLocations[i].title) {
-                console.log("end location is " , allLocations[i].lat, allLocations[i].lng);
                 var endLat = allLocations[i].lat;
                 var endLong = allLocations[i].lng;
            }
@@ -391,7 +391,6 @@ $("#routeOK").click(function(){
                },
                map: map,
                animation: google.maps.Animation.DROP,
-               // icon: 'images/greenmarker.png',
            });
            var marker2 = new google.maps.Marker({
                position: {
@@ -400,10 +399,7 @@ $("#routeOK").click(function(){
                },
                map: map,
                animation: google.maps.Animation.DROP,
-               // icon: 'images/redmarker.png',
            });
-
-           console.log(marker1);
 
 // FINDING DIRECTIONS AND DISTANCE
            var directionsService = new google.maps.DirectionsService();
@@ -414,22 +410,28 @@ $("#routeOK").click(function(){
                directionsService.route({
                    origin: marker1.position,
                    destination: marker2.position,
-                   travelMode: 'DRIVING'
+                   travelMode: "DRIVING"
                }, function(response, status){
-                   if(status == 'OK'){
-
-                       // var vehicleRentalCalc =
-                       console.log(numberDays);
-                       // console.log(response.routes[0].legs[0].distance.text);
-                       document.getElementById("mapResults").innerHTML += startLoc + "<span> to </span>" + endLoc + "<br/>";
+                   if(status == "OK"){
+// CALCULATE VEHICLE RENTAL, PETROL & TOTAL COST
+                       var totalDistance = response.routes[0].legs[0].distance.value;
+                       var totalCalc;
+                       for (var i = 0; i < vehicles.length; i++) {
+                           if(chosenVehicle = vehicles[i].type){
+                               vehicleRentalCalc = vehicles[i].dailyRate * numberDays;
+                               gasCalc = parseInt(vehicles[i].gasRate * totalDistance / 100000 * gasPrice);
+                               totalCalc = vehicleRentalCalc + gasCalc;
+                           }
+                       }
+                       document.getElementById("finalRoute").innerHTML += startLoc + "<span> to </span>" + endLoc + "<br/>";
                        document.getElementById("mapResults").innerHTML += "<p>Distance: " + response.routes[0].legs[0].distance.text + "</p>";
-                       document.getElementById("mapResults").innerHTML += "<p>Driving time: " + response.routes[0].legs[0].duration.text + "</p>";
-                       // document.getElementById("mapResults").innerHTML += "<p>Vehicle rental: $" + vehicleRentalCalc + "</p>";
-                       // document.getElementById("mapResults").innerHTML += "<p>Petrol: $" + gasCalc + "</p>";
-                       // document.getElementById("mapResults").innerHTML += "<p>TOTAL COST: $" + totalCalc + "</p>";
+                       // document.getElementById("mapResults").innerHTML += "<p>Driving time: " + response.routes[0].legs[0].duration.text + "</p>";
+                       document.getElementById("mapResults").innerHTML += "<p>Vehicle rental: $" + vehicleRentalCalc + "</p>";
+                       document.getElementById("mapResults").innerHTML += "<p>Petrol: $" + gasCalc + "</p>";
+                       document.getElementById("mapResults").innerHTML += "<p>TOTAL COST: $" + totalCalc + "</p>";
                        directionsDisplay.setDirections(response);
 
-                   } else if(status == 'NOT_FOUND'){
+                   } else if(status == "NOT_FOUND"){
                      Swal.fire({
                          type: "error",
                          title: "Sorry!",
@@ -437,7 +439,7 @@ $("#routeOK").click(function(){
                          timer: "4000",
                          heightAuto: false,
                      });
-                   } else if(status == 'ZERO_RESULTS'){
+                 } else if(status == "ZERO_RESULTS"){
                      Swal.fire({
                          type: "error",
                          title: "Sorry!",
@@ -457,10 +459,6 @@ $("#routeOK").click(function(){
               });
             }
 });
-
-// function initMap(sLat, sLong, eLat, eLong){
-// };
-
 
 // GET HEIGHT & WIDTH OF CURRENT PAGE
 function getHeight(){

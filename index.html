@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Transport Planner</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -17,10 +16,10 @@
         <div class="contentBox">
             <div class="mainContainer" id="page1">
                 <div class="mainHeaderContainer">
-                    <hr></hr>
+                    <hr>
                     <p class="newZealandHeader">NEW ZEALAND</p>
                     <p class="roadTripHeader">Road Trip</p>
-                    <hr></hr>
+                    <hr>
                 </div>
                 <div class="appName">
                     <p class="transportPlanner">TRANSPORT PLANNER</p>
@@ -41,7 +40,7 @@
             <div class="boxStyle" id="page2">
                 <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
                 <div class="centreWords">
-                    <h2>Kia ora!</h2>
+                    <h2 class="headerStyle">Kia ora!</h2>
                     <p class="bodyText">There’s so much to see
                         <br>and do in New Zealand.
                         <br>And self-driving is a great
@@ -54,7 +53,7 @@
                     <div class="inputField">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/people.svg" class="peopleIcon"></img></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/people.svg" alt="people icon" class="peopleIcon"></span>
                             </div>
                             <input id="people" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             <button id="peopleOK" type="button" class="btn btn-success">OK</button>
@@ -65,7 +64,7 @@
             <div class="boxStyle" id="page3">
                 <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
                 <div class="centreWords">
-                    <h2>Great!</h2>
+                    <h2 class="headerStyle">Great!</h2>
                     <p class="bodyText">Now, how many days
                         <br>will you be travelling?
                     </p>
@@ -73,7 +72,7 @@
                     <div class="inputField">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/calendarIcon.png" class="calendarIcon"></img></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/calendarIcon.png" alt="calendar icon" class="calendarIcon"></span>
                             </div>
                             <input id="journeyDays" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             <button id="daysOK" type="button" class="btn btn-success">OK</button>
@@ -84,7 +83,7 @@
             <div class="boxStyle" id="page4">
                 <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
                 <div class="centreWords vehicleWords">
-                    <h3>OK, let's have a look at your vehicle options</h3>
+                    <h3 class="headerStyle">OK, let's have a look at your vehicle options</h3>
                 </div>
                 <div class="vehicleIconBox">
                     <img class="bigVehicleIcon greyVehicleIcon" id="motorbike" src="images/motorbikeGrey.png" alt="icon of motorbike">
@@ -94,7 +93,7 @@
                     <img class="bigVehicleIcon greyVehicleIcon" id="motorhome" src="images/camperVanGrey.png" alt="icon of campervan">
                 </div>
                 <div class="vehicleCard" id="vehicleCard">
-                    <h3 id="vehicleCardHead"></h3>
+                    <h3 class="headerStyle" id="vehicleCardHead"></h3>
                     <p class="bodyText" id="vehicleCardInfo"></p>
                     <div class="vehicleOKbuttonBox">
                         <button id="vehicleOKbutton" type="button" class="btn btn-success">OK</button>
@@ -104,7 +103,7 @@
             <div class="boxStyle" id="page5">
                 <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
                 <div class="centreWords">
-                    <h3>Almost there!</h3>
+                    <h3 class="headerStyle">Almost there!</h3>
                     <p class="bodyText">Let's plan your route.</p>
                 </div>
                 <br>
@@ -138,13 +137,16 @@
             </div>
             <div class="boxStyle" id="page6">
                 <img class="goBackIcon" src="images/goBack.png" alt="go back icon">
+                <div class="centreWords">
+                    <h3 class="headerStyle" id="finalRoute"></h3>
+                    <div id="mapResults" class="bodyText">
+                    </div>
+                </div>
                 <div id="mapContainer">
-
                 </div>
-                <div id="mapResults" class="bodyText">
-
+                <div class="centreWords">
+                    <p>Have a great trip!</p>
                 </div>
-
             </div>
 
             <div class="boxStyle" id="helpContainer">
@@ -152,7 +154,7 @@
                     <img class="closeIcon closeButton" src="images/closeIcon.png" alt="close window icon">
                 </div>
                 <div class="helpWords">
-                    <h3>Planning with us is easy. <br> Here's how it works.</h3>
+                    <h3 class="headerStyle">Planning with us is easy. <br> Here's how it works.</h3>
                 </div>
                 <div class="bodyText helpText">
                     <ol class="bodyText helpList">
@@ -178,8 +180,7 @@
                     </div>
                 </div>
 
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRaHG7pQAb9lR73PlhF8Y70vJTC4oO28&libraries=places"
-                type="text/javascript"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRaHG7pQAb9lR73PlhF8Y70vJTC4oO28&libraries=places"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.all.min.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

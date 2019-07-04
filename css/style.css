@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
 }
-
 body {
     background-image: url("../images/mainImage.png");
     background-color: #F5F9FD;
@@ -14,11 +13,9 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
 p{
     margin: 0;
 }
-
 .pageContainer{
     width: 100%;
     height: 100%;
@@ -26,33 +23,23 @@ p{
     justify-content: center;
     align-items: center;
 }
-
 .contentBox{
     margin: 0 auto;
     overflow-y: auto;
     min-width: 240px;
     width: 80%;
 }
-
 .mainContainer{
     margin: 0 auto;
     max-width: 1000px;
     text-align: center;
 }
-
 hr{
     border: none;
     background-color: #232C43;
     height: 1px;
     margin: 0;
 }
-
-.mainHeaderContainer{
-    /* padding-top: 10vh;
-    margin: 0vh 15vw;
-    text-align: center; */
-}
-
 .newZealandHeader{
     font-family: 'Impact', sans-serif;
     font-size: 3em;
@@ -60,7 +47,6 @@ hr{
     padding-top: 0.5vh;
     text-align: center;
 }
-
 .roadTripHeader{
     font-family: 'Pacifico', cursive;
     font-size: 3em;
@@ -68,31 +54,26 @@ hr{
     padding: 0px 20px 10px 20px;
     text-align: center;
 }
-
 .appName{
     margin: 40px 5px;
     text-align: center;
 }
-
 .transportPlanner{
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 1.5em;
     color: #FFFFFF;
 }
-
 .iconRow{
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .vehicleIcon{
     width: 3.5rem;
     padding: 0.5rem;
 }
-
 .letsGoBox{
     width: 8rem;
     background-color: #232C43;
@@ -101,37 +82,26 @@ hr{
     margin: auto;
     text-align: center;
     margin-top: 50px;
-    /* padding-bottom: 0.5px; */
 }
-
 .letsGoBox:hover{
     background-color: #52679b;
 }
-
 .letsGoHeader{
     font-family: 'Pacifico', cursive;
     font-size: 1.5rem;
     color: #FFFFFF;
     padding: 5px;
 }
-
 .footer{
     position: fixed;
     bottom: 0;
     right: 0;
 }
-
-.nzLogoBox{
-  /* overflow: auto; */
-  /* text-align: right; */
-}
-
 .pureNZlogo{
   height: 10vh;
 }
 
-/* STYLE FOR PAGE 2,3,4 */
-
+/* STYLE FOR MAIN PAGE */
 .helpIconBox{
     height: 1.8rem;
     width: 1.8rem;
@@ -147,31 +117,21 @@ hr{
     right: 0;
     display: none;
 }
-
 .helpIconBox img {
     width: 80%;
 }
-
 .boxStyle{
     background-color: #232C43;
     opacity: 0.8;
     display: none;
     overflow: scroll;
 }
-
 #page4{
     padding-bottom: 15px;
 }
-
 #vehicleCard{
     width: 80%;
 }
-
-#page5{
-    /* width: 60%;
-    left: 0; */
-}
-
 .routeInputBox{
     margin: 0;
     text-align: center;
@@ -180,100 +140,80 @@ hr{
 .startEndForm{
     text-align: center;
 }
-
 .locationInput{
     background-color: #FFFFFF;
     color: black;
     font-size: 1em;
     width: 80%;
 }
-
 .goBackIcon{
     padding: 15px 0 0 15px;
     width: 2.5rem;
     left: 5px;
 }
-
 .centreWords{
     text-align: center;
 }
-
 .vehicleWords{
     padding: 0 30px;
 }
-
-h2, h3, h4{
+.headerStyle{
     font-family: 'Nunito', sans-serif;
     color: #FFFFFF;
 }
-
 h2{
     font-size: 2.5rem;
 }
-
 h3{
     font-size: 1.5rem;
 }
-
 h4{
     font-size: 1.3em;
 }
-
 .bodyText{
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
     color: #FFFFFF;
 }
-
 .inputField{
     padding: 0 40px 10px 40px;
     margin: auto;
     max-width: 300px;
 }
-
 .peopleIcon{
     width: 1.8em;
 }
-
 .calendarIcon{
     width: 1.4em;
 }
-
 .vehicleIconBox{
     text-align: center;
 }
-
 .bigVehicleIcon{
     width: 5.5rem;
     padding: 0.5rem;
 }
-
 .greyVehicleIcon{
     display: inline;
 }
-
 .whiteVehicleIcon{
     display: none;
 }
-
 .routeConfirmBox{
     text-align: center;
     padding-bottom: 20px;
 }
-
 .mapBox{
     margin: 0 auto;
     height: 90%;
     width: 90%;
 }
-
 #mapContainer{
     margin: 0;
     padding: 10px;
     height: 300px;
     width: auto;
 }
-
 #mapResults{
     margin: 0 auto;
     text-align: center;
@@ -284,26 +224,21 @@ h4{
 #helpContainer{
     position: relative;
 }
-
 .helpWords{
     text-align: center;
     padding: 10px;
 }
-
 .closeContainer{
     padding: 15px;
 }
-
 .closeIcon{
     width: 1.2rem;
     position: absolute;
     right: 10px;
 }
-
 .helpList{
     padding: 0 20px 20px 60px;
 }
-
 .vehicleCard{
     margin: 0 auto;
     height: auto;
@@ -315,36 +250,30 @@ h4{
     overflow: scroll;
     display: none;
 }
-
 #vehicleCardInfo{
     text-align: center;
     margin: 0 10px;
 }
-
 .vehicleOKbuttonBox{
     text-align: center;
     margin: 10px auto;
 }
-
 #vehicleCardHead{
     font-size: 1.2em;
 }
-
 .routeInputBox{
     width: 60%;
     margin: 0 auto;
 }
-
 select{
     width: 60%;
 }
 
 /* MEDIA QUERIES */
-
 @media only screen and (min-width: 450px){
     body{
     font-size: 20px;
-    /*resetting font-size for body so all em and rem will automatically upsize*/
+/*RESETTING FONT-SIZE FOR BODY SO ALL EM AND REM WILL UPSIZE AUTOMATICALLY*/
     }
     .vehicleIcon{
         width: 5rem;
@@ -370,12 +299,10 @@ select{
     .vehicleWords{
     padding: 0 40px;
     }
-
     #vehicleCardInfo{
         margin: 0 20px;
     }
 }
-
 
 @media only screen and (min-width: 650px){
     body{
@@ -424,19 +351,10 @@ select{
     .bigVehicleIcon{
     width: 10rem;
     }
-
     #vehicleCardInfo{
         margin: 0 30px;
     }
 }
-
-/*@media only screen and (min-width: 950px){
-    .nzMapBox{
-        top: 50%;
-        left: 27%;
-        transform: translate(0,-50%);
-    }
-}*/
 
 @media only screen and (min-width: 1500px){
     body{
@@ -453,11 +371,9 @@ select{
         display: flex;
         justify-content: center;
     }
-
     .page2{
         max-width: 860px;
     }
-
     .letsGoBox{
         width: 12rem;
         margin-top: 0;
