@@ -127,6 +127,7 @@ $(".goBackIcon").click(function(){
     okVehicles = [];
     $("#mapResults").html("");
     $(".locationInput").val("");
+    $("#finalRoute").html("")
 });
 
 // CLICK ? ICON TO GO TO HELP PAGE
@@ -209,7 +210,6 @@ $("#daysOK").click(function(){
 var selectableVehicle = [];
 var okVehicles = [];
 var vehicleOK = function(){
-    // var okVehicles = [];
     if((numberPeople == 1) && (numberDays < 3)){
         okVehicles.push(vehicles[0], vehicles[1]);
     } else if((numberPeople == 1) && (numberDays < 6)){
@@ -249,26 +249,31 @@ var chosenVehicle;
 $(".greyVehicleIcon").on("click",function(){
     $("#vehicleCardHead").text("");
     $("#vehicleCardInfo").text("");
+    // $(".vehicleOKbuttonBox").html("");
   for (var i = 0; i < okVehicles.length; i++){
       if (okVehicles[i].type === "motorbike"){
           if (this.id == "motorbike") {
             showVehicleCard("motorbike");
             chosenVehicle = "motorbike";
+            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       } else if (okVehicles[i].type === "smallCar"){
           if (this.id == "smallCar"){
             showVehicleCard("smallCar");
             chosenVehicle = "smallCar";
+            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       } else if (okVehicles[i].type === "largeCar") {
           if (this.id == "largeCar"){
             showVehicleCard("largeCar");
             chosenVehicle = "largeCar";
+            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       } else if (okVehicles[i].type === "motorhome"){
           if (this.id == "motorhome"){
             showVehicleCard("motorhome");
             chosenVehicle = "motorhome";
+            // $("#vehicleCard").html.append(".vehicleOKbuttonBox");
           }
       }
   };
