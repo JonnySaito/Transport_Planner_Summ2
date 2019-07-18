@@ -10,7 +10,7 @@ var vehicles = [
         gasRate: 3.7,
         iconGrey: "motorbikeGrey.png",
         iconWhite: "motorbikeWhite.png",
-        luggage: 100,
+        luggage: 100
     },
     {
         type: "smallCar",
@@ -23,7 +23,7 @@ var vehicles = [
         gasRate: 8.5,
         iconGrey: "smallCarGrey.png",
         iconWhite: "smallCarWhite.png",
-        luggage: 280,
+        luggage: 280
     },
     {
         type: "largeCar",
@@ -36,7 +36,7 @@ var vehicles = [
         gasRate: 9.7,
         iconGrey: "suvGrey.png",
         iconWhite: "suvWhite.png",
-        luggage: 550,
+        luggage: 550
     },
     {
         type: "motorhome",
@@ -49,7 +49,7 @@ var vehicles = [
         gasRate: 17,
         iconGrey: "camperVanGrey.png",
         iconWhite: "camperVanWhite.png",
-        luggage: 300,
+        luggage: 300
     },
 ];
 
@@ -58,32 +58,32 @@ var allLocations = [
     { id: 1,
       title: "Auckland",
       lat: -36.848461,
-      lng: 174.763336,
+      lng: 174.763336
     },
     { id: 2,
       title: "Rotorua",
       lat: -38.136848,
-      lng: 176.249741,
+      lng: 176.249741
     },
     { id: 3,
       title: "Wellington",
       lat: -41.286461,
-      lng: 174.776230,
+      lng: 174.776230
     },
     { id: 4,
       title: "Christchurch",
       lat: -43.532055,
-      lng: 172.636230,
+      lng: 172.636230
     },
     { id: 5,
       title: "Queenstown",
       lat: -45.032700,
-      lng: 168.658005,
+      lng: 168.658005
     },
     { id: 6,
       title: "Dunedin",
       lat: -45.878761,
-      lng: 170.502792,
+      lng: 170.502792
     },
 
 ];
@@ -155,7 +155,7 @@ $("#peopleOK").click(function(){
             title: "Oops...",
             text: "Please enter a number from 1 to 6",
             timer: "4000",
-            heightAuto: false,
+            heightAuto: false
         });
     } else{
         getHeight();
@@ -176,7 +176,7 @@ $("#daysOK").click(function(){
             title: "Oops...",
             text: "Please enter a number from 1 to 15",
             timer: "4000",
-            heightAuto: false,
+            heightAuto: false
         });
     } else if((numberPeople == 1) && (numberDays > 10)){
         Swal.fire({
@@ -184,7 +184,7 @@ $("#daysOK").click(function(){
             title: "Too long!",
             text: "You can only book up to 10 days",
             timer: "4000",
-            heightAuto: false,
+            heightAuto: false
         });
     } else if((numberPeople > 2) && (numberDays == 1)){
         Swal.fire({
@@ -192,7 +192,7 @@ $("#daysOK").click(function(){
             title: "Too short!",
             text: "You need to book at least 2 days",
             timer: "4000",
-            heightAuto: false,
+            heightAuto: false
         });
     } else{
         getHeight();
@@ -310,7 +310,7 @@ $("#routeOK").click(function(){
             title: "Wait!",
             text: "You need to enter a start and end point",
             timer: "4000",
-            heightAuto: false,
+            heightAuto: false
         });
     }else if (startLoc != endLoc){
         getHeight();
@@ -433,7 +433,7 @@ $("#routeOK").click(function(){
                          title: "Sorry!",
                          text: "Either your start or end point is invalid",
                          timer: "4000",
-                         heightAuto: false,
+                         heightAuto: false
                      });
                  } else if(status == "ZERO_RESULTS"){
                      Swal.fire({
@@ -441,7 +441,7 @@ $("#routeOK").click(function(){
                          title: "Sorry!",
                          text: "No route available there",
                          timer: "4000",
-                         heightAuto: false,
+                         heightAuto: false
                      });
                    }
                })
@@ -451,7 +451,7 @@ $("#routeOK").click(function(){
                 title: "Oops...",
                 text: "Your start and end points need to be different",
                 timer: "4000",
-                heightAuto: false,
+                heightAuto: false
               });
             }
 });
