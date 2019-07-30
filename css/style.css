@@ -110,7 +110,7 @@ hr{
     margin: 15px;
     text-align: center;
     padding: 2px;
-    position:fixed;
+    position: fixed;
     top: 0;
     right: 0;
     display: none;
@@ -237,6 +237,8 @@ h4{
 .helpList{
     padding: 0 20px 20px 60px;
 }
+
+/*  STYLING FOR VEHICLE CARD */
 .vehicleCard{
     margin: 0 auto;
     height: auto;
@@ -259,6 +261,8 @@ h4{
 #vehicleCardHead{
     font-size: 1.2em;
 }
+
+/* OTHER STYLING */
 .routeInputBox{
     width: 60%;
     margin: 0 auto;

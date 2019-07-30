@@ -50,7 +50,7 @@ var vehicles = [
         iconGrey: "camperVanGrey.png",
         iconWhite: "camperVanWhite.png",
         luggage: 300
-    },
+    }
 ];
 
 // LOCATIONS
@@ -84,8 +84,7 @@ var allLocations = [
       title: "Dunedin",
       lat: -45.878761,
       lng: 170.502792
-    },
-
+    }
 ];
 
 // GLOBAL VARIABLES
